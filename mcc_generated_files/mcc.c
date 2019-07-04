@@ -54,10 +54,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     WDT_Initialize();
     TMR2_Initialize();
-    EXT_INT_Initialize();
-    TMR0_Initialize();
     EUSART_Initialize();
-    timeout_initialize();
     MTOUCH_Initialize();
 }
 

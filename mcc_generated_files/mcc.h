@@ -51,13 +51,9 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "interrupt_manager.h"
-#include "ext_int.h"
 #include "tmr2.h"
-#include "tmr0.h"
 #include "mtouch/mtouch.h"
 #include "eusart.h"
-#include "drivers/timeout.h"
 
 
 

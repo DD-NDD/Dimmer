@@ -83,18 +83,11 @@ typedef union {
     uint8_t status;
 }eusart_status_t;
 
-/**
- Section: Global variables
- */
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
 
 /**
   Section: EUSART APIs
 */
 
-void (*EUSART_TxDefaultInterruptHandler)(void);
-void (*EUSART_RxDefaultInterruptHandler)(void);
 
 /**
   @Summary
@@ -120,11 +113,11 @@ void EUSART_Initialize(void);
 
 /**
   @Summary
-    Checks if the EUSART transmitter is ready
+    Checks if the EUSART transmitter is ready to transmit data
 
   @Description
-    This routine checks if EUSART transmitter is empty and ready
-    for next transmission
+    This routine checks if EUSART transmitter is ready 
+    to accept and transmit data byte
 
   @Preconditions
     EUSART_Initialize() function should have been called
@@ -136,8 +129,9 @@ void EUSART_Initialize(void);
     None
 
   @Returns
-    The number of available bytes that EUSART has remaining in 
-    its transmit buffer
+    Status of EUSART transmitter
+    TRUE: EUSART transmitter is ready
+    FALSE: EUSART transmitter is not ready
     
   @Example
     <code>
@@ -148,11 +142,53 @@ void EUSART_Initialize(void);
         // Initialize the device
         SYSTEM_Initialize();
         
-        // Enable the Global Interrupts
-        INTERRUPT_GlobalInterruptEnable();
+        while(1)
+        {
+            // Logic to echo received data
+            if(EUSART_is_rx_ready())
+            {
+                rxData = UART1_Read();
+                if(EUSART_is_tx_ready())
+                {
+                    EUSARTWrite(rxData);
+                }
+            }
+        }
+    }
+    </code>
+*/
+bool EUSART_is_tx_ready(void);
 
-        // Enable the Peripheral Interrupts
-        INTERRUPT_PeripheralInterruptEnable();
+/**
+  @Summary
+    Checks if the EUSART receiver ready for reading
+
+  @Description
+    This routine checks if EUSART receiver has received data 
+    and ready to be read
+
+  @Preconditions
+    EUSART_Initialize() function should be called
+    before calling this function
+    EUSART receiver should be enabled before calling this 
+    function
+
+  @Param
+    None
+
+  @Returns
+    Status of EUSART receiver
+    TRUE: EUSART receiver is ready for reading
+    FALSE: EUSART receiver is not ready for reading
+    
+  @Example
+    <code>
+    void main(void)
+    {
+        volatile uint8_t rxData;
+        
+        // Initialize the device
+        SYSTEM_Initialize();
         
         while(1)
         {
@@ -169,59 +205,7 @@ void EUSART_Initialize(void);
     }
     </code>
 */
-uint8_t EUSART_is_tx_ready(void);
-
-/**
-  @Summary
-    Checks if EUSART receiver is empty
-
-  @Description
-    This routine returns the available number of bytes to be read 
-    from EUSART receiver
-
-  @Preconditions
-    EUSART_Initialize() function should be called
-    before calling this function
-    EUSART receiver should be enabled before calling this 
-    function
-
-  @Param
-    None
-
-  @Returns
-    The number of bytes EUSART has available for reading
-    
-  @Example
-    <code>
-    void main(void)
-    {
-        volatile uint8_t rxData;
-        
-        // Initialize the device
-        SYSTEM_Initialize();
-        
-        // Enable the Global Interrupts
-        INTERRUPT_GlobalInterruptEnable();
-        
-        // Enable the Peripheral Interrupts
-        INTERRUPT_PeripheralInterruptEnable();
-        
-        while(1)
-        {
-            // Logic to echo received data
-            if(EUSART_is_rx_ready())
-            {
-                rxData = UART1_Read();
-                if(EUSART_is_tx_ready())
-                {
-                    EUSARTT_Write(rxData);
-                }
-            }
-        }
-    }
-    </code>
-*/
-uint8_t EUSART_is_rx_ready(void);
+bool EUSART_is_rx_ready(void);
 
 /**
   @Summary
@@ -358,68 +342,7 @@ uint8_t EUSART_Read(void);
 */
 void EUSART_Write(uint8_t txData);
 
-/**
-  @Summary
-    Maintains the driver's transmitter state machine and implements its ISR.
 
-  @Description
-    This routine is used to maintain the driver's internal transmitter state
-    machine.This interrupt service routine is called when the state of the
-    transmitter needs to be maintained in a non polled manner.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void EUSART_Transmit_ISR(void);
-
-/**
-  @Summary
-    Maintains the driver's receiver state machine and implements its ISR
-
-  @Description
-    This routine is used to maintain the driver's internal receiver state
-    machine.This interrupt service routine is called when the state of the
-    receiver needs to be maintained in a non polled manner.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void EUSART_Receive_ISR(void);
-
-/**
-  @Summary
-    Maintains the driver's receiver state machine
-
-  @Description
-    This routine is called by the receive state routine and is used to maintain 
-    the driver's internal receiver state machine. It should be called by a custom
-    ISR to maintain normal behavior
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    None
-
-  @Returns
-    None
-*/
-void EUSART_RxDataHandler(void);
 
 /**
   @Summary
@@ -475,45 +398,7 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 */
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
-/**
-  @Summary
-    Sets the transmit handler function to be called by the interrupt service
 
-  @Description
-    Calling this function will set a new custom function that will be 
-    called when the transmit interrupt needs servicing.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    A pointer to the new function
-
-  @Returns
-    None
-*/
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-
-/**
-  @Summary
-    Sets the receive handler function to be called by the interrupt service
-
-  @Description
-    Calling this function will set a new custom function that will be 
-    called when the receive interrupt needs servicing.
-
-  @Preconditions
-    EUSART_Initialize() function should have been called
-    for the ISR to execute correctly.
-
-  @Param
-    A pointer to the new function
-
-  @Returns
-    None
-*/
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

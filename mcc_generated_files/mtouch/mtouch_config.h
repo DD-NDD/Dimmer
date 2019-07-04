@@ -88,8 +88,7 @@
     #define MTOUCH_BUTTON_BASELINE_RATE             ((mtouch_button_baselinecounter_t)64u)
     #define MTOUCH_BUTTON_BASELINE_HOLD             ((mtouch_button_baselinecounter_t)1024u)
     #define MTOUCH_BUTTON_NEGATIVEDEVIATION         ((mtouch_button_statecounter_t)64u)
-    #define MTOUCH_BUTTON_PRESSTIMEOUT              ((mtouch_button_statecounter_t)1000u)
-    #define MTOUCH_BUTTON_DEBOUNCE_COUNT            (10u)
+    #define MTOUCH_BUTTON_PRESSTIMEOUT              ((mtouch_button_statecounter_t)10000u)
 
     #define MTOUCH_BUTTON_SENSOR_UP             Sensor_AN24
     #define MTOUCH_BUTTON_SENSOR_POWER             Sensor_AN26

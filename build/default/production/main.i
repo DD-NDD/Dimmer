@@ -4607,9 +4607,9 @@ extern __bank0 __bit __timeout;
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 266 "./mcc_generated_files/pin_manager.h"
+# 254 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 278 "./mcc_generated_files/pin_manager.h"
+# 266 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -4701,24 +4701,6 @@ typedef uint32_t uint_fast32_t;
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 54 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/ext_int.h" 1
-# 250 "./mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 272 "./mcc_generated_files/ext_int.h"
-void INT_ISR(void);
-# 296 "./mcc_generated_files/ext_int.h"
-void INT_CallBack(void);
-# 319 "./mcc_generated_files/ext_int.h"
-void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-# 343 "./mcc_generated_files/ext_int.h"
-extern void (*INT_InterruptHandler)(void);
-# 367 "./mcc_generated_files/ext_int.h"
-void INT_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4734,28 +4716,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 104 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 135 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 174 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 210 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 225 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 243 "./mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 261 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 279 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 297 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
+# 54 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/mtouch/mtouch.h" 1
 # 41 "./mcc_generated_files/mtouch/mtouch.h"
@@ -4903,7 +4864,7 @@ void TMR0_DefaultInterruptHandler(void);
     _Bool MTOUCH_Service_Mainloop (void);
     void MTOUCH_Tick (void);
     _Bool MTOUCH_Service_isInProgress (void);
-# 58 "./mcc_generated_files/mcc.h" 2
+# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/eusart.h" 1
 # 57 "./mcc_generated_files/eusart.h"
@@ -5054,81 +5015,32 @@ typedef union {
     };
     uint8_t status;
 }eusart_status_t;
-
-
-
-
-extern volatile uint8_t eusartTxBufferRemaining;
-extern volatile uint8_t eusartRxCount;
-
-
-
-
-
-void (*EUSART_TxDefaultInterruptHandler)(void);
-void (*EUSART_RxDefaultInterruptHandler)(void);
-# 119 "./mcc_generated_files/eusart.h"
+# 112 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 172 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_is_tx_ready(void);
-# 224 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_is_rx_ready(void);
-# 271 "./mcc_generated_files/eusart.h"
+# 160 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 208 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_rx_ready(void);
+# 255 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 319 "./mcc_generated_files/eusart.h"
+# 303 "./mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 339 "./mcc_generated_files/eusart.h"
+# 323 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 359 "./mcc_generated_files/eusart.h"
+# 343 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 380 "./mcc_generated_files/eusart.h"
-void EUSART_Transmit_ISR(void);
-# 401 "./mcc_generated_files/eusart.h"
-void EUSART_Receive_ISR(void);
-# 422 "./mcc_generated_files/eusart.h"
-void EUSART_RxDataHandler(void);
-# 440 "./mcc_generated_files/eusart.h"
+# 363 "./mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 458 "./mcc_generated_files/eusart.h"
+# 381 "./mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 476 "./mcc_generated_files/eusart.h"
+# 399 "./mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 496 "./mcc_generated_files/eusart.h"
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 516 "./mcc_generated_files/eusart.h"
-void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
-# 59 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/drivers/timeout.h" 1
-# 51 "./mcc_generated_files/drivers/timeout.h"
-typedef uint32_t (*timercallback_ptr_t)(void *payload);
-
-typedef struct tmrStruct {
-    timercallback_ptr_t callbackPtr;
-    void* payload;
-    struct tmrStruct* next;
-    uint32_t absoluteTime;
-} timerStruct_t;
-
-void timeout_initialize(void);
-void timeout_create(timerStruct_t *timer, uint32_t timeout);
-void timeout_delete(timerStruct_t *timer);
-void timeout_flushAll(void);
-_Bool timeout_hasPendingTimeouts(void);
-_Bool timeout_hasPendingCallbacks(void);
-__attribute__((inline)) void timeout_callNextCallback(void);
-void timeout_isr(void);
-
-void timeout_startTimer(timerStruct_t *timer);
-uint32_t timeout_stopTimer(timerStruct_t *timer);
-
-uint32_t timeout_getTimeRemaining(timerStruct_t *timer);
-# 60 "./mcc_generated_files/mcc.h" 2
-# 75 "./mcc_generated_files/mcc.h"
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 88 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 100 "./mcc_generated_files/mcc.h"
+# 96 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 1 "main.c" 2
 
@@ -5154,25 +5066,44 @@ union
 
 
 uint8_t value;
-
+uint16_t count;
 
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
 {
     SYSTEM_Initialize();
-    do { LATAbits.LATA5 = 0; } while(0);
-    do { LATAbits.LATA1 = 0; } while(0);
-    do { LATCbits.LATC0 = 0; } while(0);
-    (INTCONbits.GIE = 1);
-    (INTCONbits.PEIE = 1);
+
+
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
     value = 0;
+    count = 0;
     while (1)
     {
         if(MTOUCH_Service_Mainloop())
         {
+            if(user_touch.POWER)
+            {
+                if(MTOUCH_Button_Buttonmask_Get() == 1)
+                {
+                    count++;
+                    if(count == 100)
+                    {
+                        printf("------%d---------\r\n",value++);
+                        count = 0;
+                    }
+                }
+                else if(MTOUCH_Button_Buttonmask_Get() == 4)
+                {
+                    count++;
+                    if(count == 100)
+                    {
+                        printf("------%d---------\r\n",value--);
+                        count = 0;
+                    }
+                }
+            }
         }
     }
 }
@@ -5181,32 +5112,25 @@ void myButtonPressedCallback(enum mtouch_button_names button)
     if(button == POWER)
     {
         user_touch.POWER = ~user_touch.POWER;
+        if(user_touch.POWER) printf("ON\r\n");
+        else printf("OFF\r\n");
     }
     if(user_touch.POWER)
     {
-        do { LATAbits.LATA1 = 0; } while(0);
-        printf("ON\r\n");
+
         if(MTOUCH_Button_Buttonmask_Get() == 1)
         {
-            printf("UP\r\n");
+            printf("------%d---------\r\n",value++);
+            count = 0;
         }
         else if(MTOUCH_Button_Buttonmask_Get() == 4)
         {
-            printf("DOWN\r\n");
+            printf("------%d---------\r\n",value--);
+            count = 0;
         }
     }
-    else
-    {
-        do { LATAbits.LATA1 = 1; } while(0);
-        printf("OFF\r\n");
-    }
-
 }
 void myButtonReleasedCallback(enum mtouch_button_names button)
 {
-    printf("Released\r\n");
-    if(user_touch.POWER)
-    {
-        printf("%d\r\n",MTOUCH_Button_Buttonmask_Get());
-    }
+    count = 0;
 }

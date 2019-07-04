@@ -4903,9 +4903,7 @@ enum mtouch_button_state
 {
     MTOUCH_BUTTON_STATE_initializing = 0,
     MTOUCH_BUTTON_STATE_notPressed,
-    MTOUCH_BUTTON_STATE_pressDebounce,
-    MTOUCH_BUTTON_STATE_pressed,
-    MTOUCH_BUTTON_STATE_releaseDebounce
+    MTOUCH_BUTTON_STATE_pressed
 };
 
 
@@ -4986,8 +4984,6 @@ static void Button_DefaultCallback (enum mtouch_button_names button);
 static void Button_State_Initializing (mtouch_button_t* button);
 static void Button_State_NotPressed (mtouch_button_t* button);
 static void Button_State_Pressed (mtouch_button_t* button);
-static void Button_State_PressDebounce (mtouch_button_t* button);
-static void Button_State_ReleaseDebounce(mtouch_button_t* button);
 
 
 
@@ -5008,9 +5004,7 @@ button_statemachine_state_t Button_StateMachine[] =
 {
     Button_State_Initializing,
     Button_State_NotPressed,
-    Button_State_PressDebounce,
-    Button_State_Pressed,
-    Button_State_ReleaseDebounce
+    Button_State_Pressed
 };
 
 
@@ -5113,8 +5107,9 @@ static void Button_State_NotPressed(mtouch_button_t* button)
     else if ((button->deviation) > (button->threshold))
     {
 
-        button->state = MTOUCH_BUTTON_STATE_pressDebounce;
+        button->state = MTOUCH_BUTTON_STATE_pressed;
         button->counter = (mtouch_button_statecounter_t)0;
+        callback_pressed(button->name);
     }
     else
     {
@@ -5135,7 +5130,7 @@ static void Button_State_NotPressed(mtouch_button_t* button)
 static void Button_State_Pressed(mtouch_button_t* button)
 {
 
-    if ((button->counter) >= ((mtouch_button_statecounter_t)1000u))
+    if ((button->counter) >= ((mtouch_button_statecounter_t)10000u))
     {
         MTOUCH_Button_Initialize(button->name);
         callback_notPressed(button->name);
@@ -5144,50 +5139,13 @@ static void Button_State_Pressed(mtouch_button_t* button)
 
     else if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)- ((button->threshold) >> HYST_50_PERCENT)))
     {
-        button->state = MTOUCH_BUTTON_STATE_releaseDebounce;
-        button->counter = (mtouch_button_statecounter_t)0;
-    }
-}
-
-static void Button_State_PressDebounce (mtouch_button_t* button)
-{
-
-    if((button->deviation) > (button->threshold))
-    {
-        (button->counter)++;
-        if ((button->counter) >= (10u))
-        {
-            button->state = MTOUCH_BUTTON_STATE_pressed;
-            button->counter = (mtouch_button_statecounter_t)0;
-            callback_pressed(button->name);
-        }
-    }
-    else
-    {
         button->state = MTOUCH_BUTTON_STATE_notPressed;
         button->counter = (mtouch_button_statecounter_t)0;
+        button->baseline_count = (mtouch_button_baselinecounter_t)((0xffff))-((mtouch_button_baselinecounter_t)1024u);
+        callback_notPressed(button->name);
     }
 }
 
-static void Button_State_ReleaseDebounce(mtouch_button_t* button)
-{
-    if ((button->deviation) < (mtouch_button_deviation_t)((button->threshold)-((button->threshold) >> HYST_50_PERCENT)))
-    {
-        (button->counter)++;
-        if ((button->counter) >= (10u))
-        {
-            button->state = MTOUCH_BUTTON_STATE_notPressed;
-            button->counter = 0;
-            button->baseline_count = (mtouch_button_baselinecounter_t)((0xffff))-((mtouch_button_baselinecounter_t)1024u);
-            callback_notPressed(button->name);
-        }
-    }
-    else
-    {
-        button->state = MTOUCH_BUTTON_STATE_pressed;
-        button->counter = (mtouch_button_statecounter_t)0;
-    }
-}
 
 
 
@@ -5273,7 +5231,7 @@ void MTOUCH_Button_Oversampling_Set(enum mtouch_button_names name,uint8_t oversa
 _Bool MTOUCH_Button_isPressed(enum mtouch_button_names name)
 {
     if(name < 3u)
-        return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_pressed || mtouch_button[name].state == MTOUCH_BUTTON_STATE_releaseDebounce) ? 1 : 0);
+        return (_Bool)((mtouch_button[name].state == MTOUCH_BUTTON_STATE_pressed) ? 1 : 0);
     else
         return 0;
 }
@@ -5413,7 +5371,7 @@ uint8_t MTOUCH_Button_State_Get(enum mtouch_button_names name)
     else
         return 0;
 }
-# 569 "mcc_generated_files/mtouch/mtouch_button.c"
+# 527 "mcc_generated_files/mtouch/mtouch_button.c"
 static void Button_DefaultCallback(enum mtouch_button_names button) { }
 void MTOUCH_Button_SetPressedCallback(void (*callback)(enum mtouch_button_names))
 {
