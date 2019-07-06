@@ -1,0 +1,1608 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF1559 ]
+[d frameptr 6 ]
+"67 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_api_example.c
+[e E93 mtouch_button_names `uc
+Button0 0
+Button1 1
+Button2 2
+]
+"143 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[e E2864 mtouch_sensor_names `uc
+Sensor_AN26 0
+Sensor_AN12 1
+Sensor_AN24 2
+]
+"208
+[e E2868 mtouch_sensor_error `c
+MTOUCH_SENSOR_ERROR_none 0
+MTOUCH_SENSOR_ERROR_invalid_index -1
+MTOUCH_SENSOR_ERROR_interrupt_notEnabled -2
+MTOUCH_SENSOR_ERROR_invalid_calibrate -3
+MTOUCH_SENSOR_ERROR_tooManyRetries -4
+MTOUCH_SENSOR_ERROR_scanOverrun -5
+MTOUCH_SENSOR_ERROR_interruptedScan -6
+]
+"82 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[e E3069 mtouch_button_names `uc
+Button0 0
+Button1 1
+Button2 2
+]
+[e E3010 mtouch_sensor_names `uc
+Sensor_AN26 0
+Sensor_AN12 1
+Sensor_AN24 2
+]
+[e E3130 mtouch_button_state `uc
+MTOUCH_BUTTON_STATE_initializing 0
+MTOUCH_BUTTON_STATE_notPressed 1
+MTOUCH_BUTTON_STATE_pressed 2
+]
+"283
+[e E3134 mtouch_button_hysteresis_thresholds `uc
+HYST_50_PERCENT 1
+HYST_25_PERCENT 2
+HYST_12_5_PERCENT 3
+HYST_6_25_PERCENT 4
+HYST_MAX 5
+]
+"18 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\main.c
+[e E2923 mtouch_button_names `uc
+Button0 0
+Button1 1
+Button2 2
+]
+"1 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"72 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.5v  1 e 1 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"13 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"98
+[v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
+"140
+[v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
+"85 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"148
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"171
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"200
+[v _putch putch `(v  1 e 1 0 ]
+"205
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"224
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"248
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"258
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"260
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"268
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"272
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"276
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"280
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"284
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"288
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"32 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/ext_int.c
+[v _INT_ISR INT_ISR `(v  1 e 1 0 ]
+"41
+[v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
+"50
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+"54
+[v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
+"59
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+"52 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"62
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"80 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch.c
+[v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
+"95
+[v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
+"124
+[v _MTOUCH_Tick MTOUCH_Tick `(v  1 e 1 0 ]
+"134
+[v _MTOUCH_needReburst MTOUCH_needReburst `(a  1 s 1 MTOUCH_needReburst ]
+"159 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
+"171
+[v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
+"189
+[v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
+"200
+[v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
+"217
+[v _Button_State_Initializing Button_State_Initializing `(v  1 s 1 Button_State_Initializing ]
+"237
+[v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
+"273
+[v _Button_State_Pressed Button_State_Pressed `(v  1 s 1 Button_State_Pressed ]
+"297
+[v _MTOUCH_Button_Tick MTOUCH_Button_Tick `(v  1 e 1 0 ]
+"305
+[v _Button_Tick_helper Button_Tick_helper `(v  1 s 1 Button_Tick_helper ]
+"374
+[v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
+"399
+[v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
+"421
+[v _MTOUCH_Button_Buttonmask_Get MTOUCH_Button_Buttonmask_Get `(uc  1 e 1 0 ]
+"448
+[v _Button_Reading_Update Button_Reading_Update `(v  1 s 1 Button_Reading_Update ]
+"462
+[v _Button_Reading_Update_Helper Button_Reading_Update_Helper `(v  1 s 1 Button_Reading_Update_Helper ]
+"475
+[v _Button_Baseline_Initialize Button_Baseline_Initialize `(v  1 s 1 Button_Baseline_Initialize ]
+"481
+[v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
+"505
+[v _Button_Baseline_Get_helper Button_Baseline_Get_helper `(us  1 s 2 Button_Baseline_Get_helper ]
+"527
+[v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
+"528
+[v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
+"532
+[v _MTOUCH_Button_SetNotPressedCallback MTOUCH_Button_SetNotPressedCallback `(v  1 e 1 0 ]
+"208 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2868  1 e 1 0 ]
+"223
+[v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
+"239
+[v _MTOUCH_Sensor_Scan_Initialize MTOUCH_Sensor_Scan_Initialize `(v  1 e 1 0 ]
+"258
+[v _MTOUCH_Sensor_SampleAll MTOUCH_Sensor_SampleAll `(a  1 e 1 0 ]
+"303
+[v _Sensor_Service Sensor_Service `(E2868  1 s 1 Sensor_Service ]
+"354
+[v _Sensor_getScanGroupIndex Sensor_getScanGroupIndex `(uc  1 s 1 Sensor_getScanGroupIndex ]
+"372
+[v _Sensor_Acquisition Sensor_Acquisition `(E2868  1 s 1 Sensor_Acquisition ]
+"415
+[v _Sensor_postAcquisitionProcess Sensor_postAcquisitionProcess `(v  1 s 1 Sensor_postAcquisitionProcess ]
+"437
+[v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
+"471
+[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2868  1 s 1 Sensor_Acq_ExecutePacket ]
+"688
+[v _Sensor_autoCalibration Sensor_autoCalibration `(v  1 s 1 Sensor_autoCalibration ]
+"733
+[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2868  1 s 1 Sensor_Scanfrequency_Evaluation ]
+"792
+[v _MTOUCH_Sensor_RawSample_Get MTOUCH_Sensor_RawSample_Get `(us  1 e 2 0 ]
+"802
+[v _Sensor_RawSample_Update Sensor_RawSample_Update `(v  1 s 1 Sensor_RawSample_Update ]
+"823
+[v _Sensor_DefaultCallback Sensor_DefaultCallback `(v  1 s 1 Sensor_DefaultCallback ]
+"841
+[v _MTOUCH_Sensor_Enable MTOUCH_Sensor_Enable `(v  1 e 1 0 ]
+"855
+[v _Sensor_isEnabled Sensor_isEnabled `(a  1 s 1 Sensor_isEnabled ]
+"872
+[v _Sensor_setActive Sensor_setActive `T(v  1 s 1 Sensor_setActive ]
+"877
+[v _Sensor_setInactive Sensor_setInactive `T(v  1 s 1 Sensor_setInactive ]
+"882
+[v _Sensor_isActive Sensor_isActive `T(a  1 s 1 Sensor_isActive ]
+"904
+[v _MTOUCH_Sensor_Calibrate MTOUCH_Sensor_Calibrate `(v  1 e 1 0 ]
+"912
+[v _MTOUCH_Sensor_isCalibrated MTOUCH_Sensor_isCalibrated `(a  1 e 1 0 ]
+"920
+[v _Sensor_isCalibrated Sensor_isCalibrated `T(a  1 s 1 Sensor_isCalibrated ]
+"925
+[v _Sensor_setCalibrated Sensor_setCalibrated `T(v  1 s 1 Sensor_setCalibrated ]
+"931
+[v _Sensor_setCalibratAcqTime Sensor_setCalibratAcqTime `T(v  1 s 1 Sensor_setCalibratAcqTime ]
+"937
+[v _Sensor_isCalibratingAcqTime Sensor_isCalibratingAcqTime `T(a  1 s 1 Sensor_isCalibratingAcqTime ]
+"950
+[v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
+"959
+[v _MTOUCH_Sensor_wasSampled MTOUCH_Sensor_wasSampled `(a  1 e 1 0 ]
+"964
+[v _Sensor_Sampled_Reset Sensor_Sampled_Reset `T(v  1 s 1 Sensor_Sampled_Reset ]
+"969
+[v _Sensor_setSampled Sensor_setSampled `T(v  1 s 1 Sensor_setSampled ]
+"1005
+[v _MTOUCH_Sensor_Oversampling_Get MTOUCH_Sensor_Oversampling_Get `(uc  1 e 1 0 ]
+"1013
+[v _MTOUCH_Sensor_Oversampling_Set MTOUCH_Sensor_Oversampling_Set `(v  1 e 1 0 ]
+"55 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"79
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
+"85
+[v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
+"106
+[v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
+[s S1697 . 1 `uc 1 CS0 1 0 :1:0 
+`uc 1 CS1 1 0 :1:1 
+`uc 1 CS2 1 0 :1:2 
+`uc 1 CS3 1 0 :1:3 
+`uc 1 CS4 1 0 :1:4 
+`uc 1 CS5 1 0 :1:5 
+`uc 1 CS6 1 0 :1:6 
+`uc 1 CS7 1 0 :1:7 
+]
+"17 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X/define.h
+[u S1706 . 2 `ui 1 full_status 2 0 `S1697 1 . 1 0 ]
+[v _last_touch_status last_touch_status `S1706  1 e 2 0 ]
+"18
+[v _counter_1s counter_1s `us  1 e 2 0 ]
+"19
+[v _counter_ON_OFF counter_ON_OFF `uc  1 e 1 0 ]
+"20
+[v _counter_PRESS counter_PRESS `uc  1 e 1 0 ]
+"22
+[v _turn_off turn_off `a  1 e 1 0 ]
+"23
+[v _turn_on turn_on `a  1 e 1 0 ]
+"96 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X/mcc_generated_files/eusart.h
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"97
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+[s S1691 . 1 `uc 1 level 1 0 :4:0 
+`uc 1 last_level 1 0 :4:4 
+]
+"11 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X/triac.h
+[u S1694 . 2 `ui 1 full 2 0 `S1691 1 . 1 0 ]
+[v _triac_level triac_level `S1694  1 e 2 0 ]
+[s S422 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"374 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
+[s S431 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S436 . 1 `S422 1 . 1 0 `S431 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES436  1 e 1 @11 ]
+[s S284 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"601
+[s S293 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 AD1IF 1 0 :1:6 
+]
+[u S296 . 1 `S284 1 . 1 0 `S293 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES296  1 e 1 @17 ]
+[s S312 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 AD2IF 1 0 :1:6 
+]
+"659
+[u S317 . 1 `S312 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES317  1 e 1 @18 ]
+"885
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"905
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"925
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S140 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"946
+[s S144 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[u S152 . 1 `S140 1 . 1 0 `S144 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES152  1 e 1 @28 ]
+"996
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1046
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1085
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S1210 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1168
+[s S1219 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 AD1IE 1 0 :1:6 
+]
+[u S1222 . 1 `S1210 1 . 1 0 `S1219 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES1222  1 e 1 @145 ]
+[s S1513 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1264
+[s S1520 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S1527 . 1 `S1513 1 . 1 0 `S1520 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES1527  1 e 1 @149 ]
+"1381
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1440
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1785
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"1830
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"1869
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"1931
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2035
+[v _APFCON APFCON `VEuc  1 e 1 @285 ]
+[s S260 . 1 `uc 1 GRDASEL 1 0 :1:0 
+`uc 1 GRDBSEL 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 SDSEL 1 0 :1:4 
+`uc 1 SSSEL 1 0 :1:5 
+]
+"2049
+[u S266 . 1 `S260 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES266  1 e 1 @285 ]
+"2074
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2127
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2174
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"2414
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"2434
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2461
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"2481
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"2501
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S1315 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"2518
+[u S1324 . 1 `S1315 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1324  1 e 1 @413 ]
+"2563
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S1293 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2580
+[u S1302 . 1 `S1293 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1302  1 e 1 @414 ]
+"2625
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"2677
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"2735
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4145
+[v _AD1CON0 AD1CON0 `VEuc  1 e 1 @1809 ]
+[s S340 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+"4179
+[s S344 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S352 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_nDONE1 1 0 :1:1 
+]
+[u S355 . 1 `S340 1 . 1 0 `S344 1 . 1 0 `S352 1 . 1 0 ]
+[v _AD1CON0bits AD1CON0bits `VES355  1 e 1 @1809 ]
+"4379
+[v _ADCOMCON ADCOMCON `VEuc  1 e 1 @1810 ]
+"4533
+[v _AD1CON2 AD1CON2 `VEuc  1 e 1 @1811 ]
+"4542
+[v _AAD1CON2 AAD1CON2 `VEuc  1 e 1 @1811 ]
+"4653
+[v _AD1CON3 AD1CON3 `VEuc  1 e 1 @1812 ]
+"4662
+[v _AAD1CON3 AAD1CON3 `VEuc  1 e 1 @1812 ]
+"5003
+[v _AD1PRECON AD1PRECON `VEuc  1 e 1 @1814 ]
+"5249
+[v _AD1ACQCON AD1ACQCON `VEuc  1 e 1 @1815 ]
+"5504
+[v _AAD1GRD AAD1GRD `VEuc  1 e 1 @1816 ]
+"5660
+[v _AAD1CAP AAD1CAP `VEuc  1 e 1 @1817 ]
+"5889
+[v _AAD1RES0 AAD1RES0 `VEus  1 e 2 @1818 ]
+"6183
+[v _AD2CON0 AD2CON0 `VEuc  1 e 1 @1937 ]
+"6213
+[s S387 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_nDONE2 1 0 :1:1 
+]
+[u S390 . 1 `S340 1 . 1 0 `S344 1 . 1 0 `S387 1 . 1 0 ]
+[v _AD2CON0bits AD2CON0bits `VES390  1 e 1 @1937 ]
+"6341
+[v _AD2CON2 AD2CON2 `VEuc  1 e 1 @1939 ]
+"6423
+[v _AD2CON3 AD2CON3 `VEuc  1 e 1 @1940 ]
+"6428
+[v _AAD2CON3 AAD2CON3 `VEuc  1 e 1 @1940 ]
+"6553
+[v _AD2PRECON AD2PRECON `VEuc  1 e 1 @1942 ]
+"6739
+[v _AD2ACQCON AD2ACQCON `VEuc  1 e 1 @1943 ]
+"6930
+[v _AAD2GRD AAD2GRD `VEuc  1 e 1 @1944 ]
+"7211
+[v _AAD2RES0 AAD2RES0 `VEus  1 e 2 @1946 ]
+"8464
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"55 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"62 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+[s S1199 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S1204 . 1 `S1199 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S1204  1 e 8 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES1204  1 e 1 0 ]
+"77
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"79
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"30 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/ext_int.c
+[v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
+"52 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch.c
+[v _mtouch_time_toScan mtouch_time_toScan `a  1 s 1 mtouch_time_toScan ]
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+"82 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _mtouch_button_init mtouch_button_init `DC[3]S875  1 e 48 0 ]
+"110
+[v _mtouch_button mtouch_button `[3]S875  1 s 48 mtouch_button ]
+"137
+[v _callback_pressed callback_pressed `*.37(v  1 s 2 callback_pressed ]
+"138
+[v _callback_notPressed callback_notPressed `*.37(v  1 s 2 callback_notPressed ]
+"146
+[v _Button_StateMachine Button_StateMachine `[3]*.37(v  1 e 6 0 ]
+"143 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _callback_sampled callback_sampled `*.37(v  1 s 2 callback_sampled ]
+"150
+[v _packet_sample packet_sample `[2]us  1 s 4 packet_sample ]
+"151
+[v _packet_noise packet_noise `us  1 s 2 packet_noise ]
+"152
+[v _lowpowerActivated lowpowerActivated `a  1 s 1 lowpowerActivated ]
+[s S95 . 1 `uc 1 done 1 0 :1:0 
+`uc 1 check 1 0 :1:1 
+`uc 1 error 1 0 :1:2 
+`uc 1 interrupted 1 0 :1:3 
+]
+"153
+[v _sensor_globalFlags sensor_globalFlags `VES95  1 s 1 sensor_globalFlags ]
+"159
+[v _sample_period sample_period `uc  1 s 1 sample_period ]
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+"166
+[v _mtouch_sensor mtouch_sensor `[3]S100  1 s 27 mtouch_sensor ]
+"198
+[s S113 . 2 `*.5S100 1 sensor_adc1 1 0 `*.5S100 1 sensor_adc2 1 1 ]
+[v _sensor_scan_group sensor_scan_group `DC[2]S113  1 s 4 sensor_scan_group ]
+"13 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"94
+} 0
+"50 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"60
+} 0
+"70
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"62 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"55 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"97
+} 0
+"62 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"68
+} 0
+"80 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch.c
+[v _MTOUCH_Initialize MTOUCH_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"223 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_InitializeAll MTOUCH_Sensor_InitializeAll `(v  1 e 1 0 ]
+{
+"225
+[v MTOUCH_Sensor_InitializeAll@sensor sensor `E2864  1 a 1 10 ]
+"231
+} 0
+"208
+[v _MTOUCH_Sensor_Initialize MTOUCH_Sensor_Initialize `(E2868  1 e 1 0 ]
+{
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2864  1 a 1 wreg ]
+"211
+[v MTOUCH_Sensor_Initialize@sensor sensor `E2864  1 a 1 8 ]
+"216
+} 0
+"841
+[v _MTOUCH_Sensor_Enable MTOUCH_Sensor_Enable `(v  1 e 1 0 ]
+{
+[v MTOUCH_Sensor_Enable@sensor sensor `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_Enable@sensor sensor `E2864  1 a 1 wreg ]
+"843
+[v MTOUCH_Sensor_Enable@sensor sensor `E2864  1 a 1 6 ]
+"845
+} 0
+"171 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_InitializeAll MTOUCH_Button_InitializeAll `(v  1 e 1 0 ]
+{
+"173
+[v MTOUCH_Button_InitializeAll@button button `E3069  1 a 1 0 ]
+"181
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.5v  1 e 1 0 ]
+{
+[v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
+"8
+[v memcpy@s s `*.25DCuc  1 a 2 7 ]
+"7
+[v memcpy@d d `*.5uc  1 a 1 10 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 6 ]
+"4
+[v memcpy@d1 d1 `*.5v  1 a 1 wreg ]
+[v memcpy@s1 s1 `*.25DCv  1 p 2 1 ]
+[v memcpy@n n `ui  1 p 2 3 ]
+"11
+[v memcpy@d1 d1 `*.5v  1 a 1 9 ]
+"18
+} 0
+"59 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/ext_int.c
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0
+"50
+[v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
+"52
+} 0
+"85 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"127
+} 0
+"284
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
+"286
+} 0
+"288
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
+"290
+} 0
+"276
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
+"278
+} 0
+"272
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
+"274
+} 0
+"280
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 1 ]
+"282
+} 0
+"95 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch.c
+[v _MTOUCH_Service_Mainloop MTOUCH_Service_Mainloop `(a  1 e 1 0 ]
+{
+"117
+} 0
+"134
+[v _MTOUCH_needReburst MTOUCH_needReburst `(a  1 s 1 MTOUCH_needReburst ]
+{
+"139
+} 0
+"124
+[v _MTOUCH_Tick MTOUCH_Tick `(v  1 e 1 0 ]
+{
+"127
+} 0
+"297 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_Tick MTOUCH_Button_Tick `(v  1 e 1 0 ]
+{
+"299
+[v MTOUCH_Button_Tick@i i `uc  1 a 1 5 ]
+"304
+} 0
+"305
+[v _Button_Tick_helper Button_Tick_helper `(v  1 s 1 Button_Tick_helper ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Tick_helper@button button `*.5S875  1 a 1 wreg ]
+[v Button_Tick_helper@button button `*.5S875  1 a 1 wreg ]
+"308
+"305
+[v Button_Tick_helper@button button `*.5S875  1 a 1 3 ]
+"316
+} 0
+"950 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_Sampled_ResetAll MTOUCH_Sensor_Sampled_ResetAll `(v  1 e 1 0 ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+"952
+[v MTOUCH_Sensor_Sampled_ResetAll@sensor sensor `*.5S100  1 a 1 3 ]
+"957
+} 0
+"964
+[v _Sensor_Sampled_Reset Sensor_Sampled_Reset `T(v  1 s 1 Sensor_Sampled_Reset ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_Sampled_Reset@sensor sensor `*.5S100  1 a 1 wreg ]
+"966
+"964
+[v Sensor_Sampled_Reset@sensor sensor `*.5S100  1 a 1 1 ]
+"967
+} 0
+"258
+[v _MTOUCH_Sensor_SampleAll MTOUCH_Sensor_SampleAll `(a  1 e 1 0 ]
+{
+"260
+[v MTOUCH_Sensor_SampleAll@group group `uc  1 a 1 58 ]
+"267
+} 0
+"303
+[v _Sensor_Service Sensor_Service `(E2868  1 s 1 Sensor_Service ]
+{
+[v Sensor_Service@scanGroup scanGroup `uc  1 a 1 wreg ]
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+"306
+[v Sensor_Service@sensor_adc2 sensor_adc2 `*.5S100  1 a 1 56 ]
+"305
+[v Sensor_Service@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 55 ]
+"311
+[v Sensor_Service@error error `E2868  1 a 1 54 ]
+"303
+[v Sensor_Service@scanGroup scanGroup `uc  1 a 1 wreg ]
+"308
+[v Sensor_Service@scanGroup scanGroup `uc  1 a 1 53 ]
+"352
+} 0
+"969
+[v _Sensor_setSampled Sensor_setSampled `T(v  1 s 1 Sensor_setSampled ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_setSampled@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_setSampled@sensor sensor `*.5S100  1 a 1 wreg ]
+"971
+"969
+[v Sensor_setSampled@sensor sensor `*.5S100  1 a 1 1 ]
+"972
+} 0
+"802
+[v _Sensor_RawSample_Update Sensor_RawSample_Update `(v  1 s 1 Sensor_RawSample_Update ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_RawSample_Update@sensor sensor `*.5S100  1 a 1 wreg ]
+"804
+[v Sensor_RawSample_Update@adcIndex adcIndex `uc  1 a 1 6 ]
+"802
+[v Sensor_RawSample_Update@sensor sensor `*.5S100  1 a 1 wreg ]
+"804
+"802
+[v Sensor_RawSample_Update@sensor sensor `*.5S100  1 a 1 7 ]
+"816
+} 0
+"823
+[v _Sensor_DefaultCallback Sensor_DefaultCallback `(v  1 s 1 Sensor_DefaultCallback ]
+{
+[v Sensor_DefaultCallback@sensor sensor `E2864  1 p 1 1 ]
+} 0
+"372
+[v _Sensor_Acquisition Sensor_Acquisition `(E2868  1 s 1 Sensor_Acquisition ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+"374
+[v Sensor_Acquisition@retry retry `uc  1 a 1 48 ]
+"372
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+[v Sensor_Acquisition@sensor_adc2 sensor_adc2 `*.5S100  1 p 1 46 ]
+"374
+"372
+[v Sensor_Acquisition@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 49 ]
+"413
+} 0
+"415
+[v _Sensor_postAcquisitionProcess Sensor_postAcquisitionProcess `(v  1 s 1 Sensor_postAcquisitionProcess ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S100  1 a 1 wreg ]
+"417
+[v Sensor_postAcquisitionProcess@deviation deviation `us  1 a 2 17 ]
+"418
+[v Sensor_postAcquisitionProcess@adcIndex adcIndex `uc  1 a 1 16 ]
+"415
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S100  1 a 1 wreg ]
+"418
+"415
+[v Sensor_postAcquisitionProcess@sensor sensor `*.5S100  1 a 1 19 ]
+"429
+} 0
+"877
+[v _Sensor_setInactive Sensor_setInactive `T(v  1 s 1 Sensor_setInactive ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_setInactive@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_setInactive@sensor sensor `*.5S100  1 a 1 wreg ]
+"879
+"877
+[v Sensor_setInactive@sensor sensor `*.5S100  1 a 1 1 ]
+"880
+} 0
+"872
+[v _Sensor_setActive Sensor_setActive `T(v  1 s 1 Sensor_setActive ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_setActive@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_setActive@sensor sensor `*.5S100  1 a 1 wreg ]
+"874
+"872
+[v Sensor_setActive@sensor sensor `*.5S100  1 a 1 1 ]
+"875
+} 0
+"733
+[v _Sensor_Scanfrequency_Evaluation Sensor_Scanfrequency_Evaluation `(E2868  1 s 1 Sensor_Scanfrequency_Evaluation ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+"739
+[v Sensor_Scanfrequency_Evaluation@best_packet_sample best_packet_sample `[2]us  1 a 4 41 ]
+"737
+[v Sensor_Scanfrequency_Evaluation@packet_noise_Max packet_noise_Max `us  1 a 2 37 ]
+"735
+[v Sensor_Scanfrequency_Evaluation@i i `uc  1 a 1 45 ]
+"740
+[v Sensor_Scanfrequency_Evaluation@retry retry `uc  1 a 1 40 ]
+"738
+[v Sensor_Scanfrequency_Evaluation@best_sample_period best_sample_period `uc  1 a 1 39 ]
+"733
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+[v Sensor_Scanfrequency_Evaluation@sensor_adc2 sensor_adc2 `*.5S100  1 p 1 33 ]
+"736
+[v Sensor_Scanfrequency_Evaluation@frequency_hop frequency_hop `DC[5]uc  1 s 5 frequency_hop ]
+"742
+"733
+[v Sensor_Scanfrequency_Evaluation@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 36 ]
+"785
+} 0
+"471
+[v _Sensor_Acq_ExecutePacket Sensor_Acq_ExecutePacket `(E2868  1 s 1 Sensor_Acq_ExecutePacket ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+"477
+[v Sensor_Acq_ExecutePacket@last_b last_b `us  1 a 2 29 ]
+"476
+[v Sensor_Acq_ExecutePacket@last_a last_a `us  1 a 2 27 ]
+"474
+[v Sensor_Acq_ExecutePacket@packet_counter packet_counter `uc  1 a 1 31 ]
+"478
+[v Sensor_Acq_ExecutePacket@activeSensor activeSensor `uc  1 a 1 26 ]
+"473
+[v Sensor_Acq_ExecutePacket@ADxIF_flag ADxIF_flag `uc  1 a 1 25 ]
+"487
+[v Sensor_Acq_ExecutePacket@sensor2ForceEnabled sensor2ForceEnabled `uc  1 a 1 24 ]
+[v Sensor_Acq_ExecutePacket@sensor1ForceEnabled sensor1ForceEnabled `uc  1 a 1 23 ]
+"481
+[v Sensor_Acq_ExecutePacket@AD2CON2_temp AD2CON2_temp `uc  1 a 1 22 ]
+[v Sensor_Acq_ExecutePacket@AD1CON2_temp AD1CON2_temp `uc  1 a 1 21 ]
+"480
+[v Sensor_Acq_ExecutePacket@ADCOMCON_temp ADCOMCON_temp `uc  1 a 1 20 ]
+"471
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 wreg ]
+[v Sensor_Acq_ExecutePacket@sensor_adc2 sensor_adc2 `*.5S100  1 p 1 18 ]
+"476
+"471
+[v Sensor_Acq_ExecutePacket@sensor_adc1 sensor_adc1 `*.5S100  1 a 1 32 ]
+"678
+} 0
+"85 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/tmr2.c
+[v _TMR2_StopTimer TMR2_StopTimer `(v  1 e 1 0 ]
+{
+"89
+} 0
+"79
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
+{
+"83
+} 0
+"106
+[v _TMR2_LoadPeriodRegister TMR2_LoadPeriodRegister `(v  1 e 1 0 ]
+{
+[v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
+[v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 wreg ]
+"108
+[v TMR2_LoadPeriodRegister@periodVal periodVal `uc  1 a 1 1 ]
+"109
+} 0
+"437 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _Sensor_loadADCSettings Sensor_loadADCSettings `(v  1 s 1 Sensor_loadADCSettings ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_loadADCSettings@sensor sensor `*.5S100  1 a 1 wreg ]
+"442
+[v Sensor_loadADCSettings@addressOffset addressOffset `uc  1 a 1 8 ]
+"437
+[v Sensor_loadADCSettings@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_loadADCSettings@adc_index adc_index `uc  1 p 1 2 ]
+"439
+"437
+[v Sensor_loadADCSettings@sensor sensor `*.5S100  1 a 1 9 ]
+"464
+} 0
+"920
+[v _Sensor_isCalibrated Sensor_isCalibrated `T(a  1 s 1 Sensor_isCalibrated ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_isCalibrated@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_isCalibrated@sensor sensor `*.5S100  1 a 1 wreg ]
+"922
+"920
+[v Sensor_isCalibrated@sensor sensor `*.5S100  1 a 1 1 ]
+"923
+} 0
+"855
+[v _Sensor_isEnabled Sensor_isEnabled `(a  1 s 1 Sensor_isEnabled ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_isEnabled@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_isEnabled@sensor sensor `*.5S100  1 a 1 wreg ]
+"857
+"855
+[v Sensor_isEnabled@sensor sensor `*.5S100  1 a 1 2 ]
+"861
+} 0
+"882
+[v _Sensor_isActive Sensor_isActive `T(a  1 s 1 Sensor_isActive ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_isActive@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_isActive@sensor sensor `*.5S100  1 a 1 wreg ]
+"884
+"882
+[v Sensor_isActive@sensor sensor `*.5S100  1 a 1 1 ]
+"888
+} 0
+"688
+[v _Sensor_autoCalibration Sensor_autoCalibration `(v  1 s 1 Sensor_autoCalibration ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_autoCalibration@sensor sensor `*.5S100  1 a 1 wreg ]
+"690
+[v Sensor_autoCalibration@adcIndex adcIndex `uc  1 a 1 16 ]
+"688
+[v Sensor_autoCalibration@sensor sensor `*.5S100  1 a 1 wreg ]
+"690
+"688
+[v Sensor_autoCalibration@sensor sensor `*.5S100  1 a 1 17 ]
+"724
+} 0
+"925
+[v _Sensor_setCalibrated Sensor_setCalibrated `T(v  1 s 1 Sensor_setCalibrated ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_setCalibrated@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_setCalibrated@sensor sensor `*.5S100  1 a 1 wreg ]
+"927
+"925
+[v Sensor_setCalibrated@sensor sensor `*.5S100  1 a 1 1 ]
+"929
+} 0
+"931
+[v _Sensor_setCalibratAcqTime Sensor_setCalibratAcqTime `T(v  1 s 1 Sensor_setCalibratAcqTime ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S100  1 a 1 wreg ]
+"933
+"931
+[v Sensor_setCalibratAcqTime@sensor sensor `*.5S100  1 a 1 1 ]
+"935
+} 0
+"937
+[v _Sensor_isCalibratingAcqTime Sensor_isCalibratingAcqTime `T(a  1 s 1 Sensor_isCalibratingAcqTime ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S100  1 a 1 wreg ]
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S100  1 a 1 wreg ]
+"939
+"937
+[v Sensor_isCalibratingAcqTime@sensor sensor `*.5S100  1 a 1 1 ]
+"941
+} 0
+"354
+[v _Sensor_getScanGroupIndex Sensor_getScanGroupIndex `(uc  1 s 1 Sensor_getScanGroupIndex ]
+{
+[s S100 . 9 `DCE2864 1 sensor 1 0 `DCuc 1 adcon0 1 1 `uc 1 precharge_time 1 2 `uc 1 acquisition_time 1 3 `uc 1 oversampling 1 4 `uc 1 addcap 1 5 `us 1 rawSample 2 6 `uc 1 sampled 1 8 :1:0 
+`uc 1 active 1 8 :1:1 
+`uc 1 calibrated 1 8 :1:2 
+`uc 1 enabled 1 8 :1:3 
+`uc 1 acqTime_cal 1 8 :1:4 
+]
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S100  1 a 1 wreg ]
+"356
+[v Sensor_getScanGroupIndex@sensorGroup sensorGroup `uc  1 a 1 4 ]
+"354
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S100  1 a 1 wreg ]
+"357
+"354
+[v Sensor_getScanGroupIndex@sensor sensor `*.5S100  1 a 1 3 ]
+"365
+} 0
+"239
+[v _MTOUCH_Sensor_Scan_Initialize MTOUCH_Sensor_Scan_Initialize `(v  1 e 1 0 ]
+{
+"249
+} 0
+"189 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_ServiceAll MTOUCH_Button_ServiceAll `(v  1 e 1 0 ]
+{
+"191
+[v MTOUCH_Button_ServiceAll@button button `E3069  1 a 1 18 ]
+"198
+} 0
+"200
+[v _Button_Service Button_Service `(v  1 s 1 Button_Service ]
+{
+[v Button_Service@name name `E3069  1 a 1 wreg ]
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+"202
+[v Button_Service@button button `*.5S875  1 a 1 16 ]
+"200
+[v Button_Service@name name `E3069  1 a 1 wreg ]
+"202
+[v Button_Service@name name `E3069  1 a 1 15 ]
+"215
+} 0
+"959 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_wasSampled MTOUCH_Sensor_wasSampled `(a  1 e 1 0 ]
+{
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2864  1 a 1 wreg ]
+"961
+[v MTOUCH_Sensor_wasSampled@sensor sensor `E2864  1 a 1 6 ]
+"962
+} 0
+"912
+[v _MTOUCH_Sensor_isCalibrated MTOUCH_Sensor_isCalibrated `(a  1 e 1 0 ]
+{
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2864  1 a 1 wreg ]
+"914
+[v MTOUCH_Sensor_isCalibrated@sensor sensor `E2864  1 a 1 6 ]
+"918
+} 0
+"237 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _Button_State_NotPressed Button_State_NotPressed `(v  1 s 1 Button_State_NotPressed ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_NotPressed@button button `*.5S875  1 p 1 8 ]
+"271
+} 0
+"217
+[v _Button_State_Initializing Button_State_Initializing `(v  1 s 1 Button_State_Initializing ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_Initializing@button button `*.5S875  1 p 1 8 ]
+"236
+} 0
+"273
+[v _Button_State_Pressed Button_State_Pressed `(v  1 s 1 Button_State_Pressed ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_State_Pressed@button button `*.5S875  1 p 1 8 ]
+"290
+} 0
+"98 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\main.c
+[v _myButtonPressedCallback myButtonPressedCallback `(v  1 e 1 0 ]
+{
+[v myButtonPressedCallback@button button `E2923  1 p 1 3 ]
+"139
+} 0
+"527 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _Button_DefaultCallback Button_DefaultCallback `(v  1 s 1 Button_DefaultCallback ]
+{
+} 0
+"140 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\main.c
+[v _myButtonReleasedCallback myButtonReleasedCallback `(v  1 e 1 0 ]
+{
+[v myButtonReleasedCallback@button button `E2923  1 p 1 3 ]
+"143
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.4v  1 a 1 2 ]
+"5
+[v printf@fmt fmt `*.25DCuc  1 p 2 71 ]
+"13
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S1840 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S1840  1 a 1 wreg ]
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 69 ]
+"1368
+[v vfprintf@fp fp `*.1S1840  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 63 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 65 ]
+"1373
+"1368
+[v vfprintf@fp fp `*.1S1840  1 a 1 68 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S1840 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S1840  1 a 1 wreg ]
+"674
+[v vfpfcnvrt@ll ll `o  1 a 8 54 ]
+"670
+[v vfpfcnvrt@fp fp `*.1S1840  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 47 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 48 ]
+"680
+"670
+[v vfpfcnvrt@fp fp `*.1S1840  1 a 1 62 ]
+"1365
+} 0
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+[s S1840 _IO_FILE 0 ]
+[v dtoa@fp fp `*.1S1840  1 a 1 wreg ]
+"277
+[v dtoa@n n `o  1 a 8 37 ]
+"276
+[v dtoa@i i `i  1 a 2 45 ]
+[v dtoa@s s `i  1 a 2 35 ]
+[v dtoa@w w `i  1 a 2 33 ]
+[v dtoa@p p `i  1 a 2 31 ]
+"274
+[v dtoa@fp fp `*.1S1840  1 a 1 wreg ]
+[v dtoa@d d `o  1 p 8 17 ]
+"280
+"274
+[v dtoa@fp fp `*.1S1840  1 a 1 30 ]
+"315
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S1840 _IO_FILE 0 ]
+[v pad@fp fp `*.1S1840  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 14 ]
+[v pad@i i `i  1 a 2 12 ]
+"72
+[v pad@fp fp `*.1S1840  1 a 1 wreg ]
+[v pad@buf buf `*.5uc  1 p 1 8 ]
+[v pad@p p `i  1 p 2 9 ]
+"77
+"72
+[v pad@fp fp `*.1S1840  1 a 1 16 ]
+"95
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+[v strlen@s s `*.5DCuc  1 a 1 wreg ]
+"14
+[v strlen@a a `*.5DCuc  1 a 1 4 ]
+"12
+[v strlen@s s `*.5DCuc  1 a 1 wreg ]
+"14
+[v strlen@s s `*.5DCuc  1 a 1 5 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 5 ]
+"10
+[v fputs@c c `uc  1 a 1 4 ]
+"8
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+[s S2189 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.1S2189  1 p 1 0 ]
+"13
+[v fputs@s s `*.5DCuc  1 a 1 7 ]
+"19
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 4 ]
+[s S2189 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S2189  1 p 1 6 ]
+"21
+} 0
+"200 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/eusart.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"202
+[v putch@txData txData `uc  1 a 1 3 ]
+"203
+} 0
+"171
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 2 ]
+"193
+} 0
+"1 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 4 ]
+"4
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 3 ]
+[v ___aomod@counter counter `uc  1 a 1 2 ]
+"7
+[v ___aomod@divisor divisor `o  1 p 8 0 ]
+[v ___aomod@dividend dividend `o  1 p 8 8 ]
+"36
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 4 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 3 ]
+[v ___aodiv@counter counter `uc  1 a 1 2 ]
+"7
+[v ___aodiv@divisor divisor `o  1 p 8 0 ]
+[v ___aodiv@dividend dividend `o  1 p 8 8 ]
+"43
+} 0
+"421 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _MTOUCH_Button_Buttonmask_Get MTOUCH_Button_Buttonmask_Get `(uc  1 e 1 0 ]
+{
+"425
+[v MTOUCH_Button_Buttonmask_Get@i i `uc  1 a 1 6 ]
+"423
+[v MTOUCH_Button_Buttonmask_Get@output output `uc  1 a 1 5 ]
+"433
+} 0
+"374
+[v _MTOUCH_Button_isPressed MTOUCH_Button_isPressed `(a  1 e 1 0 ]
+{
+[v MTOUCH_Button_isPressed@name name `E3069  1 a 1 wreg ]
+[v MTOUCH_Button_isPressed@name name `E3069  1 a 1 wreg ]
+"376
+[v MTOUCH_Button_isPressed@name name `E3069  1 a 1 2 ]
+"380
+} 0
+"159
+[v _MTOUCH_Button_Initialize MTOUCH_Button_Initialize `(v  1 e 1 0 ]
+{
+[v MTOUCH_Button_Initialize@name name `E3069  1 a 1 wreg ]
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+"161
+[v MTOUCH_Button_Initialize@button button `*.5S875  1 a 1 10 ]
+"159
+[v MTOUCH_Button_Initialize@name name `E3069  1 a 1 wreg ]
+"161
+[v MTOUCH_Button_Initialize@name name `E3069  1 a 1 9 ]
+"169
+} 0
+"904 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_Calibrate MTOUCH_Sensor_Calibrate `(v  1 e 1 0 ]
+{
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2864  1 a 1 wreg ]
+"906
+[v MTOUCH_Sensor_Calibrate@sensor sensor `E2864  1 a 1 6 ]
+"910
+} 0
+"481 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _Button_Baseline_Update Button_Baseline_Update `(v  1 s 1 Button_Baseline_Update ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Baseline_Update@button button `*.5S875  1 a 1 wreg ]
+[v Button_Baseline_Update@button button `*.5S875  1 a 1 wreg ]
+"483
+"481
+[v Button_Baseline_Update@button button `*.5S875  1 a 1 7 ]
+"495
+} 0
+"475
+[v _Button_Baseline_Initialize Button_Baseline_Initialize `(v  1 s 1 Button_Baseline_Initialize ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Baseline_Initialize@button button `*.5S875  1 a 1 wreg ]
+[v Button_Baseline_Initialize@button button `*.5S875  1 a 1 wreg ]
+"477
+"475
+[v Button_Baseline_Initialize@button button `*.5S875  1 a 1 9 ]
+"479
+} 0
+"448
+[v _Button_Reading_Update Button_Reading_Update `(v  1 s 1 Button_Reading_Update ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Reading_Update@button button `*.5S875  1 a 1 wreg ]
+[v Button_Reading_Update@button button `*.5S875  1 a 1 wreg ]
+"450
+"448
+[v Button_Reading_Update@button button `*.5S875  1 a 1 0 ]
+"460
+} 0
+"462
+[v _Button_Reading_Update_Helper Button_Reading_Update_Helper `(v  1 s 1 Button_Reading_Update_Helper ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Reading_Update_Helper@button button `*.5S875  1 a 1 wreg ]
+[v Button_Reading_Update_Helper@button button `*.5S875  1 a 1 wreg ]
+"464
+"462
+[v Button_Reading_Update_Helper@button button `*.5S875  1 a 1 11 ]
+"473
+} 0
+"792 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_sensor.c
+[v _MTOUCH_Sensor_RawSample_Get MTOUCH_Sensor_RawSample_Get `(us  1 e 2 0 ]
+{
+[v MTOUCH_Sensor_RawSample_Get@name name `E2864  1 a 1 wreg ]
+[v MTOUCH_Sensor_RawSample_Get@name name `E2864  1 a 1 wreg ]
+"794
+[v MTOUCH_Sensor_RawSample_Get@name name `E2864  1 a 1 8 ]
+"800
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 3 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 1 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
+"51
+} 0
+"399 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/mtouch/mtouch_button.c
+[v _Button_Deviation_Update Button_Deviation_Update `(v  1 s 1 Button_Deviation_Update ]
+{
+[s S875 . 16 `DCE3069 1 name 1 0 `DCE3010 1 sensor 1 1 `E3130 1 state 1 2 `us 1 reading 2 3 `ul 1 baseline 4 5 `c 1 deviation 1 9 `us 1 counter 2 10 `us 1 baseline_count 2 12 `uc 1 threshold 1 14 `uc 1 scaling 1 15 ]
+[v Button_Deviation_Update@button button `*.5S875  1 a 1 wreg ]
+"401
+[v Button_Deviation_Update@deviation deviation `l  1 a 4 1 ]
+"399
+[v Button_Deviation_Update@button button `*.5S875  1 a 1 wreg ]
+"403
+"399
+[v Button_Deviation_Update@button button `*.5S875  1 a 1 0 ]
+"419
+} 0
+"528
+[v _MTOUCH_Button_SetPressedCallback MTOUCH_Button_SetPressedCallback `(v  1 e 1 0 ]
+{
+[v MTOUCH_Button_SetPressedCallback@callback callback `*.37(v  1 p 2 1 ]
+"531
+} 0
+"532
+[v _MTOUCH_Button_SetNotPressedCallback MTOUCH_Button_SetNotPressedCallback `(v  1 e 1 0 ]
+{
+[v MTOUCH_Button_SetNotPressedCallback@callback callback `*.37(v  1 p 2 1 ]
+"535
+} 0
+"52 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"78
+} 0
+"32 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/ext_int.c
+[v _INT_ISR INT_ISR `(v  1 e 1 0 ]
+{
+"38
+} 0
+"41
+[v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
+{
+"48
+} 0
+"54
+[v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"57
+} 0
+"205 H:\TPTECHS\Switchs\SQ\Dimmer\DM_BT.X\mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"222
+} 0
+"224
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"246
+} 0
+"260
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"266
+} 0
+"258
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"268
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"270
+} 0
+"248
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"256
+} 0
