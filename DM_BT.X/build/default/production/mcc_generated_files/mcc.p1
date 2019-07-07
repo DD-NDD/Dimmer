@@ -1,6 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3314 `(v ~T0 @X0 0 tf ]
-[v F3316 `(v ~T0 @X0 0 tf ]
 "170 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 170: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
@@ -16,8 +15,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "250 mcc_generated_files/ext_int.h
 [; ;mcc_generated_files/ext_int.h: 250: void EXT_INT_Initialize(void);
 [v _EXT_INT_Initialize `(v ~T0 @X0 0 ef ]
-"119 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 119: void EUSART_Initialize(void);
+"118 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 118: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "53 mcc_generated_files/mtouch/mtouch.h
 [; ;mcc_generated_files/mtouch/mtouch.h: 53:     void MTOUCH_Initialize (void);
@@ -599,11 +598,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8047: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "96 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 96: void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
-"97
-[; ;mcc_generated_files/eusart.h: 97: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F3316 ~T0 @X0 1 e ]
+[; ;mcc_generated_files/eusart.h: 96: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
 "50 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -664,8 +660,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _WDT_Initialize ]
 [f ]
 "73
-[; ;mcc_generated_files/mcc.c: 73:     WDTCON = 0x16;
-[e = _WDTCON -> -> 22 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 73:     WDTCON = 0x19;
+[e = _WDTCON -> -> 25 `i `uc ]
 "74
 [; ;mcc_generated_files/mcc.c: 74: }
 [e :UE 460 ]

@@ -1,6 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3314 `(v ~T0 @X0 0 tf ]
-[v F3316 `(v ~T0 @X0 0 tf ]
 "84 mcc_generated_files/mtouch/mtouch_sensor.h
 [; ;mcc_generated_files/mtouch/mtouch_sensor.h: 84:     void MTOUCH_Sensor_InitializeAll (void);
 [v _MTOUCH_Sensor_InitializeAll `(v ~T0 @X0 0 ef ]
@@ -595,11 +594,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8047: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "96 mcc_generated_files/mtouch/../eusart.h
-[; ;mcc_generated_files/mtouch/../eusart.h: 96: void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
-"97
-[; ;mcc_generated_files/mtouch/../eusart.h: 97: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F3316 ~T0 @X0 1 e ]
+[; ;mcc_generated_files/mtouch/../eusart.h: 96: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
 "52 mcc_generated_files/mtouch/mtouch.c
 [; ;mcc_generated_files/mtouch/mtouch.c: 52: static _Bool mtouch_time_toScan = 0;
 [v _mtouch_time_toScan `a ~T0 @X0 1 s ]

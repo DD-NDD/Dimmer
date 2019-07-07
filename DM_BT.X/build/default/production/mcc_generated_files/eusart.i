@@ -4850,45 +4850,35 @@ extern volatile uint8_t eusartRxCount;
 
 
 
-void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
-# 119 "mcc_generated_files/eusart.h"
+# 118 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 172 "mcc_generated_files/eusart.h"
-uint8_t EUSART_is_tx_ready(void);
-# 224 "mcc_generated_files/eusart.h"
+# 166 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 218 "mcc_generated_files/eusart.h"
 uint8_t EUSART_is_rx_ready(void);
-# 271 "mcc_generated_files/eusart.h"
+# 265 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 319 "mcc_generated_files/eusart.h"
+# 313 "mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 339 "mcc_generated_files/eusart.h"
+# 333 "mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 359 "mcc_generated_files/eusart.h"
+# 353 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 380 "mcc_generated_files/eusart.h"
-void EUSART_Transmit_ISR(void);
-# 401 "mcc_generated_files/eusart.h"
+# 375 "mcc_generated_files/eusart.h"
 void EUSART_Receive_ISR(void);
-# 422 "mcc_generated_files/eusart.h"
+# 396 "mcc_generated_files/eusart.h"
 void EUSART_RxDataHandler(void);
-# 440 "mcc_generated_files/eusart.h"
+# 414 "mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 458 "mcc_generated_files/eusart.h"
+# 432 "mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 476 "mcc_generated_files/eusart.h"
+# 450 "mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 496 "mcc_generated_files/eusart.h"
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 516 "mcc_generated_files/eusart.h"
+# 471 "mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 50 "mcc_generated_files/eusart.c" 2
-# 62 "mcc_generated_files/eusart.c"
-volatile uint8_t eusartTxHead = 0;
-volatile uint8_t eusartTxTail = 0;
-volatile uint8_t eusartTxBuffer[8];
-volatile uint8_t eusartTxBufferRemaining;
-
+# 63 "mcc_generated_files/eusart.c"
 volatile uint8_t eusartRxHead = 0;
 volatile uint8_t eusartRxTail = 0;
 volatile uint8_t eusartRxBuffer[8];
@@ -4912,8 +4902,6 @@ void EUSART_Initialize(void)
 
     PIE1bits.RCIE = 0;
     EUSART_SetRxInterruptHandler(EUSART_Receive_ISR);
-    PIE1bits.TXIE = 0;
-    EUSART_SetTxInterruptHandler(EUSART_Transmit_ISR);
 
 
 
@@ -4939,10 +4927,6 @@ void EUSART_Initialize(void)
     eusartRxLastError.status = 0;
 
 
-    eusartTxHead = 0;
-    eusartTxTail = 0;
-    eusartTxBufferRemaining = sizeof(eusartTxBuffer);
-
     eusartRxHead = 0;
     eusartRxTail = 0;
     eusartRxCount = 0;
@@ -4951,9 +4935,9 @@ void EUSART_Initialize(void)
     PIE1bits.RCIE = 1;
 }
 
-uint8_t EUSART_is_tx_ready(void)
+_Bool EUSART_is_tx_ready(void)
 {
-    return eusartTxBufferRemaining;
+    return (_Bool)(PIR1bits.TXIF && TXSTAbits.TXEN);
 }
 
 uint8_t EUSART_is_rx_ready(void)
@@ -4976,7 +4960,6 @@ uint8_t EUSART_Read(void)
 
     while(0 == eusartRxCount)
     {
-        __asm("clrwdt");
     }
 
     eusartRxLastError = eusartRxStatusBuffer[eusartRxTail];
@@ -4995,26 +4978,11 @@ uint8_t EUSART_Read(void)
 
 void EUSART_Write(uint8_t txData)
 {
-    while(0 == eusartTxBufferRemaining)
+    while(0 == PIR1bits.TXIF)
     {
-        __asm("clrwdt");
     }
 
-    if(0 == PIE1bits.TXIE)
-    {
-        TXREG = txData;
-    }
-    else
-    {
-        PIE1bits.TXIE = 0;
-        eusartTxBuffer[eusartTxHead++] = txData;
-        if(sizeof(eusartTxBuffer) <= eusartTxHead)
-        {
-            eusartTxHead = 0;
-        }
-        eusartTxBufferRemaining--;
-    }
-    PIE1bits.TXIE = 1;
+    TXREG = txData;
 }
 
 char getch(void)
@@ -5027,24 +4995,6 @@ void putch(char txData)
     EUSART_Write(txData);
 }
 
-void EUSART_Transmit_ISR(void)
-{
-
-
-    if(sizeof(eusartTxBuffer) > eusartTxBufferRemaining)
-    {
-        TXREG = eusartTxBuffer[eusartTxTail++];
-        if(sizeof(eusartTxBuffer) <= eusartTxTail)
-        {
-            eusartTxTail = 0;
-        }
-        eusartTxBufferRemaining++;
-    }
-    else
-    {
-        PIE1bits.TXIE = 0;
-    }
-}
 
 void EUSART_Receive_ISR(void)
 {
@@ -5106,9 +5056,6 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
     EUSART_ErrorHandler = interruptHandler;
 }
 
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void)){
-    EUSART_TxDefaultInterruptHandler = interruptHandler;
-}
 
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void)){
     EUSART_RxDefaultInterruptHandler = interruptHandler;

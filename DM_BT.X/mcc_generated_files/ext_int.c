@@ -26,7 +26,13 @@
  */
 #include <xc.h>
 #include "ext_int.h"
-
+#include <stdio.h>
+#include "pin_manager.h"
+#include "device_config.h"
+#include "../define.h"
+#include "../triac.h"
+#include <stdbool.h>
+uint8_t i = 0;
 void (*INT_InterruptHandler)(void);
 
 void INT_ISR(void)
@@ -40,7 +46,16 @@ void INT_ISR(void)
 
 void INT_CallBack(void)
 {
-    // Add your custom callback code here
+    // Add your custom callback code here   
+//    for(i = 0;i<= 15-triac_level.level;i++ )
+//    {
+//        __delay_us(500);
+//    }
+//    TRIAC_SetLow();
+//    __delay_us(100);
+//    TRIAC_SetHigh();
+    triac_c.cd = triac_level.level;
+    ZCD_STATE = true;
     if(INT_InterruptHandler)
     {
         INT_InterruptHandler();

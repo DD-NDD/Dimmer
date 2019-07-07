@@ -8,11 +8,16 @@
 /*
                          Main application
  */
+void check_on_off(void);
+void check_up_down(void);
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
 {
     SYSTEM_Initialize();
+    printf("RESET\r\n");
+    //printf("-%d-%d-\r\n",triac_level.last_level,triac_level.level);
+    //printf("------------------------");
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
@@ -20,8 +25,20 @@ void main(void)
     triac_level.full = 0x00;
     while (1)
     {
+        //printf("-%d-%d-\r\n",triac_level.last_level,triac_level.level);
         if(MTOUCH_Service_Mainloop()) // 1 tick = 0.5
         {
+            if(ZCD_STATE == true)
+            {
+                triac_c.cd--;
+                if(triac_c.cd == 0)
+                {
+                    TRIAC_SetLow();
+                    __delay_us(100);
+                    TRIAC_SetHigh();
+                    ZCD_STATE = false;             
+                }
+            }
             if(counter_ON_OFF == 1)
             {
                 counter_1s++;
@@ -97,6 +114,15 @@ void main(void)
 */
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
+    check_on_off();
+    //check_up_down();
+}
+void myButtonReleasedCallback(enum mtouch_button_names button)
+{
+    counter_PRESS = 0;
+}
+void check_on_off(void)
+{
     if(MTOUCH_Button_Buttonmask_Get() == 2) 
     {
         counter_1s = 0;
@@ -116,6 +142,10 @@ void myButtonPressedCallback(enum mtouch_button_names button)
             }
         }       
     }
+    return;
+}
+void check_up_down(void)
+{
     if(last_touch_status.CS1 == 1) // ON
     {
         if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
@@ -133,8 +163,5 @@ void myButtonPressedCallback(enum mtouch_button_names button)
             counter_PRESS = 0;
         }
     }
-}
-void myButtonReleasedCallback(enum mtouch_button_names button)
-{
-    counter_PRESS = 0;
+    return;
 }

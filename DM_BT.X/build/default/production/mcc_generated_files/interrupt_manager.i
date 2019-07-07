@@ -5046,37 +5046,32 @@ extern volatile uint8_t eusartRxCount;
 
 
 
-void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
-# 119 "mcc_generated_files/eusart.h"
+# 118 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 172 "mcc_generated_files/eusart.h"
-uint8_t EUSART_is_tx_ready(void);
-# 224 "mcc_generated_files/eusart.h"
+# 166 "mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 218 "mcc_generated_files/eusart.h"
 uint8_t EUSART_is_rx_ready(void);
-# 271 "mcc_generated_files/eusart.h"
+# 265 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 319 "mcc_generated_files/eusart.h"
+# 313 "mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 339 "mcc_generated_files/eusart.h"
+# 333 "mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 359 "mcc_generated_files/eusart.h"
+# 353 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 380 "mcc_generated_files/eusart.h"
-void EUSART_Transmit_ISR(void);
-# 401 "mcc_generated_files/eusart.h"
+# 375 "mcc_generated_files/eusart.h"
 void EUSART_Receive_ISR(void);
-# 422 "mcc_generated_files/eusart.h"
+# 396 "mcc_generated_files/eusart.h"
 void EUSART_RxDataHandler(void);
-# 440 "mcc_generated_files/eusart.h"
+# 414 "mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 458 "mcc_generated_files/eusart.h"
+# 432 "mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 476 "mcc_generated_files/eusart.h"
+# 450 "mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 496 "mcc_generated_files/eusart.h"
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 516 "mcc_generated_files/eusart.h"
+# 471 "mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 58 "mcc_generated_files/mcc.h" 2
 # 73 "mcc_generated_files/mcc.h"
@@ -5097,11 +5092,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE1bits.TXIE == 1 && PIR1bits.TXIF == 1)
-        {
-            EUSART_TxDefaultInterruptHandler();
-        }
-        else if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
+        if(PIE1bits.RCIE == 1 && PIR1bits.RCIF == 1)
         {
             EUSART_RxDefaultInterruptHandler();
         }

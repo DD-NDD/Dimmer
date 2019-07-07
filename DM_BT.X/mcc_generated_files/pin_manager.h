@@ -123,19 +123,19 @@
 #define RC2_SetAnalogMode()         do { ANSELCbits.ANSC2 = 1; } while(0)
 #define RC2_SetDigitalMode()        do { ANSELCbits.ANSC2 = 0; } while(0)
 
-// get/set IO_RC3 aliases
-#define IO_RC3_TRIS                 TRISCbits.TRISC3
-#define IO_RC3_LAT                  LATCbits.LATC3
-#define IO_RC3_PORT                 PORTCbits.RC3
-#define IO_RC3_ANS                  ANSELCbits.ANSC3
-#define IO_RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
-#define IO_RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
-#define IO_RC3_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
-#define IO_RC3_GetValue()           PORTCbits.RC3
-#define IO_RC3_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
-#define IO_RC3_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
-#define IO_RC3_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
-#define IO_RC3_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
+// get/set TRIAC aliases
+#define TRIAC_TRIS                 TRISCbits.TRISC3
+#define TRIAC_LAT                  LATCbits.LATC3
+#define TRIAC_PORT                 PORTCbits.RC3
+#define TRIAC_ANS                  ANSELCbits.ANSC3
+#define TRIAC_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
+#define TRIAC_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
+#define TRIAC_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
+#define TRIAC_GetValue()           PORTCbits.RC3
+#define TRIAC_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
+#define TRIAC_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
+#define TRIAC_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
+#define TRIAC_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
 
 // get/set RC5 procedures
 #define RC5_SetHigh()            do { LATCbits.LATC5 = 1; } while(0)

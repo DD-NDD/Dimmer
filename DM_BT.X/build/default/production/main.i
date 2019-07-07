@@ -5044,37 +5044,32 @@ extern volatile uint8_t eusartRxCount;
 
 
 
-void (*EUSART_TxDefaultInterruptHandler)(void);
 void (*EUSART_RxDefaultInterruptHandler)(void);
-# 119 "./mcc_generated_files/eusart.h"
+# 118 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 172 "./mcc_generated_files/eusart.h"
-uint8_t EUSART_is_tx_ready(void);
-# 224 "./mcc_generated_files/eusart.h"
+# 166 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 218 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_is_rx_ready(void);
-# 271 "./mcc_generated_files/eusart.h"
+# 265 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 319 "./mcc_generated_files/eusart.h"
+# 313 "./mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 339 "./mcc_generated_files/eusart.h"
+# 333 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 359 "./mcc_generated_files/eusart.h"
+# 353 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 380 "./mcc_generated_files/eusart.h"
-void EUSART_Transmit_ISR(void);
-# 401 "./mcc_generated_files/eusart.h"
+# 375 "./mcc_generated_files/eusart.h"
 void EUSART_Receive_ISR(void);
-# 422 "./mcc_generated_files/eusart.h"
+# 396 "./mcc_generated_files/eusart.h"
 void EUSART_RxDataHandler(void);
-# 440 "./mcc_generated_files/eusart.h"
+# 414 "./mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 458 "./mcc_generated_files/eusart.h"
+# 432 "./mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 476 "./mcc_generated_files/eusart.h"
+# 450 "./mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 496 "./mcc_generated_files/eusart.h"
-void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
-# 516 "./mcc_generated_files/eusart.h"
+# 471 "./mcc_generated_files/eusart.h"
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 # 58 "./mcc_generated_files/mcc.h" 2
 # 73 "./mcc_generated_files/mcc.h"
@@ -5088,6 +5083,7 @@ void WDT_Initialize(void);
 # 1 "./triac.h" 1
 
 
+
 union
 {
     unsigned int full;
@@ -5097,9 +5093,20 @@ union
         unsigned last_level :4;
     };
 }triac_level;
+union
+{
+    unsigned int full;
+    struct
+    {
+        unsigned cd :4;
+        unsigned cp :4;
+    };
+}triac_c;
+_Bool ZCD_STATE = 0;
 # 2 "main.c" 2
 
 # 1 "./define.h" 1
+
 
 
 union
@@ -5132,11 +5139,16 @@ _Bool turn_on = 0;
 
 
 
+void check_on_off(void);
+void check_up_down(void);
 void myButtonPressedCallback(enum mtouch_button_names button);
 void myButtonReleasedCallback(enum mtouch_button_names button);
 void main(void)
 {
     SYSTEM_Initialize();
+    printf("RESET\r\n");
+
+
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
@@ -5144,8 +5156,20 @@ void main(void)
     triac_level.full = 0x00;
     while (1)
     {
+
         if(MTOUCH_Service_Mainloop())
         {
+            if(ZCD_STATE == 1)
+            {
+                triac_c.cd--;
+                if(triac_c.cd == 0)
+                {
+                    do { LATCbits.LATC3 = 0; } while(0);
+                    _delay((unsigned long)((100)*(32000000/4000000.0)));
+                    do { LATCbits.LATC3 = 1; } while(0);
+                    ZCD_STATE = 0;
+                }
+            }
             if(counter_ON_OFF == 1)
             {
                 counter_1s++;
@@ -5221,9 +5245,15 @@ void main(void)
 
 void myButtonPressedCallback(enum mtouch_button_names button)
 {
+    check_on_off();
 
-
-
+}
+void myButtonReleasedCallback(enum mtouch_button_names button)
+{
+    counter_PRESS = 0;
+}
+void check_on_off(void)
+{
     if(MTOUCH_Button_Buttonmask_Get() == 2)
     {
         counter_1s = 0;
@@ -5243,6 +5273,10 @@ void myButtonPressedCallback(enum mtouch_button_names button)
             }
         }
     }
+    return;
+}
+void check_up_down(void)
+{
     if(last_touch_status.CS1 == 1)
     {
         if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
@@ -5260,8 +5294,5 @@ void myButtonPressedCallback(enum mtouch_button_names button)
             counter_PRESS = 0;
         }
     }
-}
-void myButtonReleasedCallback(enum mtouch_button_names button)
-{
-    counter_PRESS = 0;
+    return;
 }

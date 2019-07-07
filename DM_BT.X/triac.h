@@ -1,5 +1,6 @@
 #include<xc.h>
 #include"mcc_generated_files/pin_manager.h"
+#include<stdbool.h>
 union
 {
     unsigned int full;
@@ -9,3 +10,13 @@ union
         unsigned last_level     :4;
     };
 }triac_level;
+union
+{
+    unsigned int full;
+    struct
+    {
+        unsigned cd :4;
+        unsigned cp :4;
+    };
+}triac_c;
+bool ZCD_STATE = false;

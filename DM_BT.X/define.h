@@ -1,5 +1,6 @@
 #include<xc.h>
 #include<stdint.h>
+#include "stdbool.h"
 union
 {
     unsigned int full_status;

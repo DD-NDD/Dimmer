@@ -1,26 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3314 `(v ~T0 @X0 0 tf ]
-[v F3316 `(v ~T0 @X0 0 tf ]
-"7 ./triac.h
-[; ;./triac.h: 7:     {
+"8 ./triac.h
+[; ;./triac.h: 8:     {
 [s S459 :4 `uc 1 :4 `uc 1 ]
 [n S459 . level last_level ]
-"4
-[; ;./triac.h: 4: {
+"5
+[; ;./triac.h: 5: {
 [u S458 `ui 1 `S459 1 ]
 [n S458 . full . ]
-"7 ./define.h
-[; ;./define.h: 7:     {
-[s S461 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S461 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
-"4
-[; ;./define.h: 4: {
+"17
+[; ;./triac.h: 17:     {
+[s S461 :4 `uc 1 :4 `uc 1 ]
+[n S461 . cd cp ]
+"14
+[; ;./triac.h: 14: {
 [u S460 `ui 1 `S461 1 ]
-[n S460 . full_status . ]
+[n S460 . full . ]
+"8 ./define.h
+[; ;./define.h: 8:     {
+[s S463 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S463 . CS0 CS1 CS2 CS3 CS4 CS5 CS6 CS7 ]
+"5
+[; ;./define.h: 5: {
+[u S462 `ui 1 `S463 1 ]
+[n S462 . full_status . ]
 [p mainexit ]
 "73 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -36,32 +45,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"18 main.c
-[; ;main.c: 18:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+"23 main.c
+[; ;main.c: 23:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
 [c E2923 0 1 2 .. ]
 [n E2923 mtouch_button_names Button0 Button1 Button2  ]
 [v F2936 `(v ~T0 @X0 0 tf1`E2923 ]
 "101 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 101:     void MTOUCH_Button_SetPressedCallback (void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetPressedCallback `(v ~T0 @X0 0 ef1`*F2936 ]
-"11 main.c
-[; ;main.c: 11: void myButtonPressedCallback(enum mtouch_button_names button);
+"13 main.c
+[; ;main.c: 13: void myButtonPressedCallback(enum mtouch_button_names button);
 [v _myButtonPressedCallback `(v ~T0 @X0 0 ef1`E2923 ]
 [v F2942 `(v ~T0 @X0 0 tf1`E2923 ]
 "102 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 102:     void MTOUCH_Button_SetNotPressedCallback(void (*callback)(enum mtouch_button_names button));
 [v _MTOUCH_Button_SetNotPressedCallback `(v ~T0 @X0 0 ef1`*F2942 ]
-"12 main.c
-[; ;main.c: 12: void myButtonReleasedCallback(enum mtouch_button_names button);
+"14 main.c
+[; ;main.c: 14: void myButtonReleasedCallback(enum mtouch_button_names button);
 [v _myButtonReleasedCallback `(v ~T0 @X0 0 ef1`E2923 ]
 "54 ./mcc_generated_files/mtouch/mtouch.h
 [; ;./mcc_generated_files/mtouch/mtouch.h: 54:     _Bool MTOUCH_Service_Mainloop (void);
 [v _MTOUCH_Service_Mainloop `(a ~T0 @X0 0 ef ]
+"1875 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1875:     struct {
+[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S106 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"1874
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1874: typedef union {
+[u S105 `S106 1 ]
+[n S105 . . ]
+"1886
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 1886: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS105 ~T0 @X0 0 e@270 ]
+[v F2802 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v __delay `JF2802 ~T0 @X0 0 e ]
+[p i __delay ]
 "120 ./mcc_generated_files/mtouch/mtouch_button.h
 [; ;./mcc_generated_files/mtouch/mtouch_button.h: 120:     mtouch_buttonmask_t MTOUCH_Button_Buttonmask_Get(void);
 [v _MTOUCH_Button_Buttonmask_Get `(uc ~T0 @X0 0 ef ]
-"113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"11 main.c
+[; ;main.c: 11: void check_on_off(void);
+[v _check_on_off `(v ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -630,470 +655,556 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16lf1559.h: 8047: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "96 ./mcc_generated_files/eusart.h
-[; ;./mcc_generated_files/eusart.h: 96: void (*EUSART_TxDefaultInterruptHandler)(void);
-[v _EUSART_TxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
-"97
-[; ;./mcc_generated_files/eusart.h: 97: void (*EUSART_RxDefaultInterruptHandler)(void);
-[v _EUSART_RxDefaultInterruptHandler `*F3316 ~T0 @X0 1 e ]
-"11 ./triac.h
-[; ;./triac.h: 11: }triac_level;
+[; ;./mcc_generated_files/eusart.h: 96: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F3314 ~T0 @X0 1 e ]
+"12 ./triac.h
+[; ;./triac.h: 12: }triac_level;
 [v _triac_level `S458 ~T0 @X0 1 e ]
-"17 ./define.h
-[; ;./define.h: 17: }last_touch_status;
-[v _last_touch_status `S460 ~T0 @X0 1 e ]
-"18
-[; ;./define.h: 18: uint16_t counter_1s = 0;
+"21
+[; ;./triac.h: 21: }triac_c;
+[v _triac_c `S460 ~T0 @X0 1 e ]
+"22
+[; ;./triac.h: 22: _Bool ZCD_STATE = 0;
+[v _ZCD_STATE `a ~T0 @X0 1 e ]
+[i _ZCD_STATE
+-> -> 0 `i `a
+]
+"18 ./define.h
+[; ;./define.h: 18: }last_touch_status;
+[v _last_touch_status `S462 ~T0 @X0 1 e ]
+"19
+[; ;./define.h: 19: uint16_t counter_1s = 0;
 [v _counter_1s `us ~T0 @X0 1 e ]
 [i _counter_1s
 -> -> 0 `i `us
 ]
-"19
-[; ;./define.h: 19: uint8_t counter_ON_OFF = 0;
+"20
+[; ;./define.h: 20: uint8_t counter_ON_OFF = 0;
 [v _counter_ON_OFF `uc ~T0 @X0 1 e ]
 [i _counter_ON_OFF
 -> -> 0 `i `uc
 ]
-"20
-[; ;./define.h: 20: uint8_t counter_PRESS = 0;
+"21
+[; ;./define.h: 21: uint8_t counter_PRESS = 0;
 [v _counter_PRESS `uc ~T0 @X0 1 e ]
 [i _counter_PRESS
 -> -> 0 `i `uc
 ]
-"21
-[; ;./define.h: 21: uint8_t count_down_off = 0;
+"22
+[; ;./define.h: 22: uint8_t count_down_off = 0;
 [v _count_down_off `uc ~T0 @X0 1 e ]
 [i _count_down_off
 -> -> 0 `i `uc
 ]
-"22
-[; ;./define.h: 22: _Bool turn_off = 0;
+"23
+[; ;./define.h: 23: _Bool turn_off = 0;
 [v _turn_off `a ~T0 @X0 1 e ]
 [i _turn_off
 -> -> 0 `i `a
 ]
-"23
-[; ;./define.h: 23: _Bool turn_on = 0;
+"24
+[; ;./define.h: 24: _Bool turn_on = 0;
 [v _turn_on `a ~T0 @X0 1 e ]
 [i _turn_on
 -> -> 0 `i `a
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"13 main.c
-[; ;main.c: 13: void main(void)
+"15 main.c
+[; ;main.c: 15: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"14
-[; ;main.c: 14: {
+"16
+[; ;main.c: 16: {
 {
 [e :U _main ]
 [f ]
-"15
-[; ;main.c: 15:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"16
-[; ;main.c: 16:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "17
-[; ;main.c: 17:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 17:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "18
-[; ;main.c: 18:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
-[e ( _MTOUCH_Button_SetPressedCallback (1 &U _myButtonPressedCallback ]
-"19
-[; ;main.c: 19:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
-[e ( _MTOUCH_Button_SetNotPressedCallback (1 &U _myButtonReleasedCallback ]
-"20
-[; ;main.c: 20:     triac_level.full = 0x00;
-[e = . _triac_level 0 -> -> 0 `i `ui ]
+[; ;main.c: 18:     printf("RESET\r\n");
+[e ( _printf :s 1C ]
 "21
-[; ;main.c: 21:     while (1)
-[e :U 464 ]
+[; ;main.c: 21:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "22
-[; ;main.c: 22:     {
-{
+[; ;main.c: 22:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "23
-[; ;main.c: 23:         if(MTOUCH_Service_Mainloop())
-[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 466  ]
+[; ;main.c: 23:     MTOUCH_Button_SetPressedCallback(myButtonPressedCallback);
+[e ( _MTOUCH_Button_SetPressedCallback (1 &U _myButtonPressedCallback ]
 "24
-[; ;main.c: 24:         {
-{
+[; ;main.c: 24:     MTOUCH_Button_SetNotPressedCallback(myButtonReleasedCallback);
+[e ( _MTOUCH_Button_SetNotPressedCallback (1 &U _myButtonReleasedCallback ]
 "25
-[; ;main.c: 25:             if(counter_ON_OFF == 1)
-[e $ ! == -> _counter_ON_OFF `i -> 1 `i 467  ]
+[; ;main.c: 25:     triac_level.full = 0x00;
+[e = . _triac_level 0 -> -> 0 `i `ui ]
 "26
-[; ;main.c: 26:             {
-{
+[; ;main.c: 26:     while (1)
+[e :U 466 ]
 "27
-[; ;main.c: 27:                 counter_1s++;
-[e ++ _counter_1s -> -> 1 `i `us ]
-"28
-[; ;main.c: 28:                 if(counter_1s >= 200)
-[e $ ! >= -> _counter_1s `ui -> -> 200 `i `ui 468  ]
-"29
-[; ;main.c: 29:                 {
+[; ;main.c: 27:     {
 {
+"29
+[; ;main.c: 29:         if(MTOUCH_Service_Mainloop())
+[e $ ! != -> ( _MTOUCH_Service_Mainloop ..  `i -> 0 `i 468  ]
 "30
-[; ;main.c: 30:                     counter_1s = 0;
-[e = _counter_1s -> -> 0 `i `us ]
+[; ;main.c: 30:         {
+{
 "31
-[; ;main.c: 31:                     counter_ON_OFF = 0;
-[e = _counter_ON_OFF -> -> 0 `i `uc ]
+[; ;main.c: 31:             if(ZCD_STATE == 1)
+[e $ ! == -> _ZCD_STATE `i -> 1 `i 469  ]
 "32
-[; ;main.c: 32:                 }
-}
-[e :U 468 ]
+[; ;main.c: 32:             {
+{
 "33
-[; ;main.c: 33:             }
-}
-[e :U 467 ]
+[; ;main.c: 33:                 triac_c.cd--;
+[e -- . . _triac_c 1 0 -> -> 1 `i `uc ]
 "34
-[; ;main.c: 34:             if(last_touch_status.CS1 == 1)
-[e $ ! == -> . . _last_touch_status 1 1 `i -> 1 `i 469  ]
+[; ;main.c: 34:                 if(triac_c.cd == 0)
+[e $ ! == -> . . _triac_c 1 0 `i -> 0 `i 470  ]
 "35
-[; ;main.c: 35:             {
+[; ;main.c: 35:                 {
 {
 "36
-[; ;main.c: 36:                 if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
-[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 1 `i != . _triac_level 0 -> -> 255 `i `ui 470  ]
-"37
-[; ;main.c: 37:                 {
-{
-"38
-[; ;main.c: 38:                     counter_PRESS++;
-[e ++ _counter_PRESS -> -> 1 `i `uc ]
-"39
-[; ;main.c: 39:                     if(counter_PRESS == 100)
-[e $ ! == -> _counter_PRESS `i -> 100 `i 471  ]
-"40
-[; ;main.c: 40:                     {
-{
-"41
-[; ;main.c: 41:                             triac_level.level++;
-[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
-"42
-[; ;main.c: 42:                             printf("------%d---------\r\n",triac_level.level);
-[e ( _printf , (. :s 1C -> . . _triac_level 1 0 `i ]
-"43
-[; ;main.c: 43:                             triac_level.last_level = triac_level.level;
-[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
-"44
-[; ;main.c: 44:                             counter_PRESS = 0;
-[e = _counter_PRESS -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:                     }
-}
-[e :U 471 ]
-"46
-[; ;main.c: 46:                 }
-}
-[e $U 472  ]
-"47
-[; ;main.c: 47:                 else if(MTOUCH_Button_Buttonmask_Get() == 4 && triac_level.full!=0x00)
-[e :U 470 ]
-[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 4 `i != . _triac_level 0 -> -> 0 `i `ui 473  ]
-"48
-[; ;main.c: 48:                 {
-{
-"49
-[; ;main.c: 49:                     counter_PRESS++;
-[e ++ _counter_PRESS -> -> 1 `i `uc ]
-"50
-[; ;main.c: 50:                     if(counter_PRESS == 100)
-[e $ ! == -> _counter_PRESS `i -> 100 `i 474  ]
-"51
-[; ;main.c: 51:                     {
-{
-"52
-[; ;main.c: 52:                         triac_level.level--;
-[e -- . . _triac_level 1 0 -> -> 1 `i `uc ]
-"53
-[; ;main.c: 53:                         printf("------%d---------\r\n",triac_level.level);
-[e ( _printf , (. :s 2C -> . . _triac_level 1 0 `i ]
-"54
-[; ;main.c: 54:                         triac_level.last_level = triac_level.level;
-[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
-"55
-[; ;main.c: 55:                         counter_PRESS = 0;
-[e = _counter_PRESS -> -> 0 `i `uc ]
-"56
-[; ;main.c: 56:                     }
-}
-[e :U 474 ]
-"57
-[; ;main.c: 57:                 }
-}
+[; ;main.c: 36:                     do { LATCbits.LATC3 = 0; } while(0);
 [e :U 473 ]
+{
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+}
 [e :U 472 ]
-"58
-[; ;main.c: 58:             }
+"37
+[; ;main.c: 37:                     _delay((unsigned long)((100)*(32000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"38
+[; ;main.c: 38:                     do { LATCbits.LATC3 = 1; } while(0);
+[e :U 476 ]
+{
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 475 ]
+"39
+[; ;main.c: 39:                     ZCD_STATE = 0;
+[e = _ZCD_STATE -> -> 0 `i `a ]
+"40
+[; ;main.c: 40:                 }
+}
+[e :U 470 ]
+"41
+[; ;main.c: 41:             }
 }
 [e :U 469 ]
-"61
-[; ;main.c: 61:             if(turn_off == 1)
-[e $ ! == -> _turn_off `i -> 1 `i 475  ]
-"62
-[; ;main.c: 62:             {
+"42
+[; ;main.c: 42:             if(counter_ON_OFF == 1)
+[e $ ! == -> _counter_ON_OFF `i -> 1 `i 477  ]
+"43
+[; ;main.c: 43:             {
 {
-"63
-[; ;main.c: 63:                 counter_1s++;
+"44
+[; ;main.c: 44:                 counter_1s++;
 [e ++ _counter_1s -> -> 1 `i `us ]
+"45
+[; ;main.c: 45:                 if(counter_1s >= 200)
+[e $ ! >= -> _counter_1s `ui -> -> 200 `i `ui 478  ]
+"46
+[; ;main.c: 46:                 {
+{
+"47
+[; ;main.c: 47:                     counter_1s = 0;
+[e = _counter_1s -> -> 0 `i `us ]
+"48
+[; ;main.c: 48:                     counter_ON_OFF = 0;
+[e = _counter_ON_OFF -> -> 0 `i `uc ]
+"49
+[; ;main.c: 49:                 }
+}
+[e :U 478 ]
+"50
+[; ;main.c: 50:             }
+}
+[e :U 477 ]
+"51
+[; ;main.c: 51:             if(last_touch_status.CS1 == 1)
+[e $ ! == -> . . _last_touch_status 1 1 `i -> 1 `i 479  ]
+"52
+[; ;main.c: 52:             {
+{
+"53
+[; ;main.c: 53:                 if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
+[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 1 `i != . _triac_level 0 -> -> 255 `i `ui 480  ]
+"54
+[; ;main.c: 54:                 {
+{
+"55
+[; ;main.c: 55:                     counter_PRESS++;
+[e ++ _counter_PRESS -> -> 1 `i `uc ]
+"56
+[; ;main.c: 56:                     if(counter_PRESS == 100)
+[e $ ! == -> _counter_PRESS `i -> 100 `i 481  ]
+"57
+[; ;main.c: 57:                     {
+{
+"58
+[; ;main.c: 58:                             triac_level.level++;
+[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
+"59
+[; ;main.c: 59:                             printf("------%d---------\r\n",triac_level.level);
+[e ( _printf , (. :s 2C -> . . _triac_level 1 0 `i ]
+"60
+[; ;main.c: 60:                             triac_level.last_level = triac_level.level;
+[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
+"61
+[; ;main.c: 61:                             counter_PRESS = 0;
+[e = _counter_PRESS -> -> 0 `i `uc ]
+"62
+[; ;main.c: 62:                     }
+}
+[e :U 481 ]
+"63
+[; ;main.c: 63:                 }
+}
+[e $U 482  ]
 "64
-[; ;main.c: 64:                 if(counter_1s >= 100)
-[e $ ! >= -> _counter_1s `ui -> -> 100 `i `ui 476  ]
+[; ;main.c: 64:                 else if(MTOUCH_Button_Buttonmask_Get() == 4 && triac_level.full!=0x00)
+[e :U 480 ]
+[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 4 `i != . _triac_level 0 -> -> 0 `i `ui 483  ]
 "65
 [; ;main.c: 65:                 {
 {
 "66
-[; ;main.c: 66:                     counter_1s = 0;
-[e = _counter_1s -> -> 0 `i `us ]
+[; ;main.c: 66:                     counter_PRESS++;
+[e ++ _counter_PRESS -> -> 1 `i `uc ]
 "67
-[; ;main.c: 67:                     triac_level.level--;
-[e -- . . _triac_level 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 67:                     if(counter_PRESS == 100)
+[e $ ! == -> _counter_PRESS `i -> 100 `i 484  ]
 "68
-[; ;main.c: 68:                     printf("------%d---------\r\n",triac_level.level);
-[e ( _printf , (. :s 3C -> . . _triac_level 1 0 `i ]
-"69
-[; ;main.c: 69:                 }
-}
-[e :U 476 ]
-"70
-[; ;main.c: 70:                 if(triac_level.level == 0)
-[e $ ! == -> . . _triac_level 1 0 `i -> 0 `i 477  ]
-"71
-[; ;main.c: 71:                 {
+[; ;main.c: 68:                     {
 {
+"69
+[; ;main.c: 69:                         triac_level.level--;
+[e -- . . _triac_level 1 0 -> -> 1 `i `uc ]
+"70
+[; ;main.c: 70:                         printf("------%d---------\r\n",triac_level.level);
+[e ( _printf , (. :s 3C -> . . _triac_level 1 0 `i ]
+"71
+[; ;main.c: 71:                         triac_level.last_level = triac_level.level;
+[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
 "72
-[; ;main.c: 72:                     turn_off = 0;
-[e = _turn_off -> -> 0 `i `a ]
+[; ;main.c: 72:                         counter_PRESS = 0;
+[e = _counter_PRESS -> -> 0 `i `uc ]
 "73
-[; ;main.c: 73:                     printf("----OFF----\r\n");
-[e ( _printf :s 4C ]
+[; ;main.c: 73:                     }
+}
+[e :U 484 ]
 "74
 [; ;main.c: 74:                 }
 }
-[e :U 477 ]
+[e :U 483 ]
+[e :U 482 ]
 "75
 [; ;main.c: 75:             }
 }
-[e :U 475 ]
-"77
-[; ;main.c: 77:             if(turn_on == 1)
-[e $ ! == -> _turn_on `i -> 1 `i 478  ]
-"78
-[; ;main.c: 78:             {
-{
-"79
-[; ;main.c: 79:                 counter_1s++;
-[e ++ _counter_1s -> -> 1 `i `us ]
-"80
-[; ;main.c: 80:                 if(counter_1s >= 100)
-[e $ ! >= -> _counter_1s `ui -> -> 100 `i `ui 479  ]
-"81
-[; ;main.c: 81:                 {
-{
-"82
-[; ;main.c: 82:                     counter_1s = 0;
-[e = _counter_1s -> -> 0 `i `us ]
-"83
-[; ;main.c: 83:                     triac_level.level++;
-[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
-"84
-[; ;main.c: 84:                     printf("------%d---------\r\n",triac_level.level);
-[e ( _printf , (. :s 5C -> . . _triac_level 1 0 `i ]
-"85
-[; ;main.c: 85:                 }
-}
 [e :U 479 ]
-"86
-[; ;main.c: 86:                 if(triac_level.level == triac_level.last_level)
-[e $ ! == -> . . _triac_level 1 0 `i -> . . _triac_level 1 1 `i 480  ]
-"87
-[; ;main.c: 87:                 {
+"78
+[; ;main.c: 78:             if(turn_off == 1)
+[e $ ! == -> _turn_off `i -> 1 `i 485  ]
+"79
+[; ;main.c: 79:             {
 {
-"88
-[; ;main.c: 88:                     turn_on = 0;
-[e = _turn_on -> -> 0 `i `a ]
-"89
-[; ;main.c: 89:                     printf("----ON----\r\n");
-[e ( _printf :s 6C ]
-"90
-[; ;main.c: 90:                 }
-}
-[e :U 480 ]
-"91
-[; ;main.c: 91:             }
-}
-[e :U 478 ]
-"92
-[; ;main.c: 92:         }
-}
-[e :U 466 ]
-"93
-[; ;main.c: 93:     }
-}
-[e :U 463 ]
-[e $U 464  ]
-[e :U 465 ]
-"94
-[; ;main.c: 94: }
-[e :UE 462 ]
-}
-"98
-[; ;main.c: 98: void myButtonPressedCallback(enum mtouch_button_names button)
-[v _myButtonPressedCallback `(v ~T0 @X0 1 ef1`E2923 ]
-"99
-[; ;main.c: 99: {
+"80
+[; ;main.c: 80:                 counter_1s++;
+[e ++ _counter_1s -> -> 1 `i `us ]
+"81
+[; ;main.c: 81:                 if(counter_1s >= 100)
+[e $ ! >= -> _counter_1s `ui -> -> 100 `i `ui 486  ]
+"82
+[; ;main.c: 82:                 {
 {
-[e :U _myButtonPressedCallback ]
-"98
-[; ;main.c: 98: void myButtonPressedCallback(enum mtouch_button_names button)
-[v _button `E2923 ~T0 @X0 1 r1 ]
-"99
-[; ;main.c: 99: {
-[f ]
-"103
-[; ;main.c: 103:     if(MTOUCH_Button_Buttonmask_Get() == 2)
-[e $ ! == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 2 `i 482  ]
-"104
-[; ;main.c: 104:     {
-{
-"105
-[; ;main.c: 105:         counter_1s = 0;
+"83
+[; ;main.c: 83:                     counter_1s = 0;
 [e = _counter_1s -> -> 0 `i `us ]
-"106
-[; ;main.c: 106:         counter_ON_OFF++;
-[e ++ _counter_ON_OFF -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:         if(counter_ON_OFF == 2)
-[e $ ! == -> _counter_ON_OFF `i -> 2 `i 483  ]
-"108
-[; ;main.c: 108:         {
-{
-"109
-[; ;main.c: 109:             counter_ON_OFF = 0;
-[e = _counter_ON_OFF -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:             last_touch_status.full_status ^= 0b00000010;
-[e =^ . _last_touch_status 0 -> -> 2 `i `ui ]
-"112
-[; ;main.c: 112:             if(last_touch_status.CS1)
-[e $ ! != -> . . _last_touch_status 1 1 `i -> 0 `i 484  ]
-"113
-[; ;main.c: 113:             {
-{
-"114
-[; ;main.c: 114:                 turn_on = 1;
-[e = _turn_on -> -> 1 `i `a ]
-"115
-[; ;main.c: 115:             }
-}
-[e $U 485  ]
-"116
-[; ;main.c: 116:             else
-[e :U 484 ]
-"117
-[; ;main.c: 117:             {
-{
-"118
-[; ;main.c: 118:                 turn_off = 1;
-[e = _turn_off -> -> 1 `i `a ]
-"119
-[; ;main.c: 119:             }
-}
-[e :U 485 ]
-"120
-[; ;main.c: 120:         }
-}
-[e :U 483 ]
-"121
-[; ;main.c: 121:     }
-}
-[e :U 482 ]
-"122
-[; ;main.c: 122:     if(last_touch_status.CS1 == 1)
-[e $ ! == -> . . _last_touch_status 1 1 `i -> 1 `i 486  ]
-"123
-[; ;main.c: 123:     {
-{
-"124
-[; ;main.c: 124:         if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
-[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 1 `i != . _triac_level 0 -> -> 255 `i `ui 487  ]
-"125
-[; ;main.c: 125:         {
-{
-"126
-[; ;main.c: 126:             triac_level.level++;
-[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
-"127
-[; ;main.c: 127:             printf("lastlevel--%d|||level--%d\r\n",triac_level.last_level,triac_level.level);
-[e ( _printf , , (. :s 7C -> . . _triac_level 1 1 `i -> . . _triac_level 1 0 `i ]
-"128
-[; ;main.c: 128:             triac_level.last_level = triac_level.level;
-[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
-"129
-[; ;main.c: 129:             counter_PRESS = 0;
-[e = _counter_PRESS -> -> 0 `i `uc ]
-"130
-[; ;main.c: 130:         }
-}
-[e $U 488  ]
-"131
-[; ;main.c: 131:         else if(MTOUCH_Button_Buttonmask_Get() == 4 && triac_level.full!=0x00)
-[e :U 487 ]
-[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 4 `i != . _triac_level 0 -> -> 0 `i `ui 489  ]
-"132
-[; ;main.c: 132:         {
-{
-"133
-[; ;main.c: 133:             triac_level.level--;
+"84
+[; ;main.c: 84:                     triac_level.level--;
 [e -- . . _triac_level 1 0 -> -> 1 `i `uc ]
-"134
-[; ;main.c: 134:             printf("lastlevel--%d|||level--%d\r\n",triac_level.last_level,triac_level.level);
-[e ( _printf , , (. :s 8C -> . . _triac_level 1 1 `i -> . . _triac_level 1 0 `i ]
-"135
-[; ;main.c: 135:             triac_level.last_level = triac_level.level;
-[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
-"136
-[; ;main.c: 136:             counter_PRESS = 0;
-[e = _counter_PRESS -> -> 0 `i `uc ]
-"137
-[; ;main.c: 137:         }
-}
-[e :U 489 ]
-[e :U 488 ]
-"138
-[; ;main.c: 138:     }
+"85
+[; ;main.c: 85:                     printf("------%d---------\r\n",triac_level.level);
+[e ( _printf , (. :s 4C -> . . _triac_level 1 0 `i ]
+"86
+[; ;main.c: 86:                 }
 }
 [e :U 486 ]
-"139
-[; ;main.c: 139: }
-[e :UE 481 ]
+"87
+[; ;main.c: 87:                 if(triac_level.level == 0)
+[e $ ! == -> . . _triac_level 1 0 `i -> 0 `i 487  ]
+"88
+[; ;main.c: 88:                 {
+{
+"89
+[; ;main.c: 89:                     turn_off = 0;
+[e = _turn_off -> -> 0 `i `a ]
+"90
+[; ;main.c: 90:                     printf("----OFF----\r\n");
+[e ( _printf :s 5C ]
+"91
+[; ;main.c: 91:                 }
 }
-"140
-[; ;main.c: 140: void myButtonReleasedCallback(enum mtouch_button_names button)
+[e :U 487 ]
+"92
+[; ;main.c: 92:             }
+}
+[e :U 485 ]
+"94
+[; ;main.c: 94:             if(turn_on == 1)
+[e $ ! == -> _turn_on `i -> 1 `i 488  ]
+"95
+[; ;main.c: 95:             {
+{
+"96
+[; ;main.c: 96:                 counter_1s++;
+[e ++ _counter_1s -> -> 1 `i `us ]
+"97
+[; ;main.c: 97:                 if(counter_1s >= 100)
+[e $ ! >= -> _counter_1s `ui -> -> 100 `i `ui 489  ]
+"98
+[; ;main.c: 98:                 {
+{
+"99
+[; ;main.c: 99:                     counter_1s = 0;
+[e = _counter_1s -> -> 0 `i `us ]
+"100
+[; ;main.c: 100:                     triac_level.level++;
+[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
+"101
+[; ;main.c: 101:                     printf("------%d---------\r\n",triac_level.level);
+[e ( _printf , (. :s 6C -> . . _triac_level 1 0 `i ]
+"102
+[; ;main.c: 102:                 }
+}
+[e :U 489 ]
+"103
+[; ;main.c: 103:                 if(triac_level.level == triac_level.last_level)
+[e $ ! == -> . . _triac_level 1 0 `i -> . . _triac_level 1 1 `i 490  ]
+"104
+[; ;main.c: 104:                 {
+{
+"105
+[; ;main.c: 105:                     turn_on = 0;
+[e = _turn_on -> -> 0 `i `a ]
+"106
+[; ;main.c: 106:                     printf("----ON----\r\n");
+[e ( _printf :s 7C ]
+"107
+[; ;main.c: 107:                 }
+}
+[e :U 490 ]
+"108
+[; ;main.c: 108:             }
+}
+[e :U 488 ]
+"109
+[; ;main.c: 109:         }
+}
+[e :U 468 ]
+"110
+[; ;main.c: 110:     }
+}
+[e :U 465 ]
+[e $U 466  ]
+[e :U 467 ]
+"111
+[; ;main.c: 111: }
+[e :UE 464 ]
+}
+"115
+[; ;main.c: 115: void myButtonPressedCallback(enum mtouch_button_names button)
+[v _myButtonPressedCallback `(v ~T0 @X0 1 ef1`E2923 ]
+"116
+[; ;main.c: 116: {
+{
+[e :U _myButtonPressedCallback ]
+"115
+[; ;main.c: 115: void myButtonPressedCallback(enum mtouch_button_names button)
+[v _button `E2923 ~T0 @X0 1 r1 ]
+"116
+[; ;main.c: 116: {
+[f ]
+"117
+[; ;main.c: 117:     check_on_off();
+[e ( _check_on_off ..  ]
+"119
+[; ;main.c: 119: }
+[e :UE 491 ]
+}
+"120
+[; ;main.c: 120: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _myButtonReleasedCallback `(v ~T0 @X0 1 ef1`E2923 ]
-"141
-[; ;main.c: 141: {
+"121
+[; ;main.c: 121: {
 {
 [e :U _myButtonReleasedCallback ]
-"140
-[; ;main.c: 140: void myButtonReleasedCallback(enum mtouch_button_names button)
+"120
+[; ;main.c: 120: void myButtonReleasedCallback(enum mtouch_button_names button)
 [v _button `E2923 ~T0 @X0 1 r1 ]
-"141
-[; ;main.c: 141: {
+"121
+[; ;main.c: 121: {
 [f ]
-"142
-[; ;main.c: 142:     counter_PRESS = 0;
+"122
+[; ;main.c: 122:     counter_PRESS = 0;
 [e = _counter_PRESS -> -> 0 `i `uc ]
+"123
+[; ;main.c: 123: }
+[e :UE 492 ]
+}
+"124
+[; ;main.c: 124: void check_on_off(void)
+[v _check_on_off `(v ~T0 @X0 1 ef ]
+"125
+[; ;main.c: 125: {
+{
+[e :U _check_on_off ]
+[f ]
+"126
+[; ;main.c: 126:     if(MTOUCH_Button_Buttonmask_Get() == 2)
+[e $ ! == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 2 `i 494  ]
+"127
+[; ;main.c: 127:     {
+{
+"128
+[; ;main.c: 128:         counter_1s = 0;
+[e = _counter_1s -> -> 0 `i `us ]
+"129
+[; ;main.c: 129:         counter_ON_OFF++;
+[e ++ _counter_ON_OFF -> -> 1 `i `uc ]
+"130
+[; ;main.c: 130:         if(counter_ON_OFF == 2)
+[e $ ! == -> _counter_ON_OFF `i -> 2 `i 495  ]
+"131
+[; ;main.c: 131:         {
+{
+"132
+[; ;main.c: 132:             counter_ON_OFF = 0;
+[e = _counter_ON_OFF -> -> 0 `i `uc ]
+"134
+[; ;main.c: 134:             last_touch_status.full_status ^= 0b00000010;
+[e =^ . _last_touch_status 0 -> -> 2 `i `ui ]
+"135
+[; ;main.c: 135:             if(last_touch_status.CS1)
+[e $ ! != -> . . _last_touch_status 1 1 `i -> 0 `i 496  ]
+"136
+[; ;main.c: 136:             {
+{
+"137
+[; ;main.c: 137:                 turn_on = 1;
+[e = _turn_on -> -> 1 `i `a ]
+"138
+[; ;main.c: 138:             }
+}
+[e $U 497  ]
+"139
+[; ;main.c: 139:             else
+[e :U 496 ]
+"140
+[; ;main.c: 140:             {
+{
+"141
+[; ;main.c: 141:                 turn_off = 1;
+[e = _turn_off -> -> 1 `i `a ]
+"142
+[; ;main.c: 142:             }
+}
+[e :U 497 ]
 "143
-[; ;main.c: 143: }
-[e :UE 490 ]
+[; ;main.c: 143:         }
+}
+[e :U 495 ]
+"144
+[; ;main.c: 144:     }
+}
+[e :U 494 ]
+"145
+[; ;main.c: 145:     return;
+[e $UE 493  ]
+"146
+[; ;main.c: 146: }
+[e :UE 493 ]
+}
+"147
+[; ;main.c: 147: void check_up_down(void)
+[v _check_up_down `(v ~T0 @X0 1 ef ]
+"148
+[; ;main.c: 148: {
+{
+[e :U _check_up_down ]
+[f ]
+"149
+[; ;main.c: 149:     if(last_touch_status.CS1 == 1)
+[e $ ! == -> . . _last_touch_status 1 1 `i -> 1 `i 499  ]
+"150
+[; ;main.c: 150:     {
+{
+"151
+[; ;main.c: 151:         if(MTOUCH_Button_Buttonmask_Get() == 1 && triac_level.full!=0xFF)
+[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 1 `i != . _triac_level 0 -> -> 255 `i `ui 500  ]
+"152
+[; ;main.c: 152:         {
+{
+"153
+[; ;main.c: 153:             triac_level.level++;
+[e ++ . . _triac_level 1 0 -> -> 1 `i `uc ]
+"154
+[; ;main.c: 154:             printf("lastlevel--%d|||level--%d\r\n",triac_level.last_level,triac_level.level);
+[e ( _printf , , (. :s 8C -> . . _triac_level 1 1 `i -> . . _triac_level 1 0 `i ]
+"155
+[; ;main.c: 155:             triac_level.last_level = triac_level.level;
+[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
+"156
+[; ;main.c: 156:             counter_PRESS = 0;
+[e = _counter_PRESS -> -> 0 `i `uc ]
+"157
+[; ;main.c: 157:         }
+}
+[e $U 501  ]
+"158
+[; ;main.c: 158:         else if(MTOUCH_Button_Buttonmask_Get() == 4 && triac_level.full!=0x00)
+[e :U 500 ]
+[e $ ! && == -> ( _MTOUCH_Button_Buttonmask_Get ..  `i -> 4 `i != . _triac_level 0 -> -> 0 `i `ui 502  ]
+"159
+[; ;main.c: 159:         {
+{
+"160
+[; ;main.c: 160:             triac_level.level--;
+[e -- . . _triac_level 1 0 -> -> 1 `i `uc ]
+"161
+[; ;main.c: 161:             printf("lastlevel--%d|||level--%d\r\n",triac_level.last_level,triac_level.level);
+[e ( _printf , , (. :s 9C -> . . _triac_level 1 1 `i -> . . _triac_level 1 0 `i ]
+"162
+[; ;main.c: 162:             triac_level.last_level = triac_level.level;
+[e = . . _triac_level 1 1 . . _triac_level 1 0 ]
+"163
+[; ;main.c: 163:             counter_PRESS = 0;
+[e = _counter_PRESS -> -> 0 `i `uc ]
+"164
+[; ;main.c: 164:         }
+}
+[e :U 502 ]
+[e :U 501 ]
+"165
+[; ;main.c: 165:     }
+}
+[e :U 499 ]
+"166
+[; ;main.c: 166:     return;
+[e $UE 498  ]
+"167
+[; ;main.c: 167: }
+[e :UE 498 ]
 }
 [p f _printf 8388736 ]
-[a 7C 108 97 115 116 108 101 118 101 108 45 45 37 100 124 124 124 108 101 118 101 108 45 45 37 100 13 10 0 ]
 [a 8C 108 97 115 116 108 101 118 101 108 45 45 37 100 124 124 124 108 101 118 101 108 45 45 37 100 13 10 0 ]
-[a 6C 45 45 45 45 79 78 45 45 45 45 13 10 0 ]
-[a 4C 45 45 45 45 79 70 70 45 45 45 45 13 10 0 ]
-[a 1C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 9C 108 97 115 116 108 101 118 101 108 45 45 37 100 124 124 124 108 101 118 101 108 45 45 37 100 13 10 0 ]
+[a 1C 82 69 83 69 84 13 10 0 ]
+[a 7C 45 45 45 45 79 78 45 45 45 45 13 10 0 ]
+[a 5C 45 45 45 45 79 70 70 45 45 45 45 13 10 0 ]
 [a 2C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]
 [a 3C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]
-[a 5C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 4C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 6C 45 45 45 45 45 45 37 100 45 45 45 45 45 45 45 45 45 13 10 0 ]

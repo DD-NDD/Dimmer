@@ -9,7 +9,7 @@
 # 1 "mcc_generated_files/device_config.c" 2
 # 50 "mcc_generated_files/device_config.c"
 #pragma config FOSC = INTOSC
-#pragma config WDTE = SWDTEN
+#pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = ON
 #pragma config CP = OFF
@@ -18,9 +18,9 @@
 
 
 #pragma config WRT = OFF
-#pragma config STVREN = ON
+#pragma config STVREN = OFF
 #pragma config BORV = LO
-#pragma config LPBOR = OFF
+#pragma config LPBOR = ON
 #pragma config LVP = ON
 # 63 "mcc_generated_files/device_config.c"
 
